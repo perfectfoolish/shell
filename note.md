@@ -1,4 +1,4 @@
-Learning shell begin with TLCL translated by Peter and billie, a good book for beginning and helping me to be a shell thumb!
+Learning shell begin with TLCL shorted for <<The Linux Command Line>> and translated by Peter and billie, a good book for beginning and helping me to be a shell thumb!
 
 
 # dpkg
