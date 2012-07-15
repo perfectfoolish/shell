@@ -1,4 +1,4 @@
-Learning shell begin with TLCL translated by Peter and billie, a good book for beginning !
+Learning shell begin with TLCL translated by Peter and billie, a good book for beginning and helping me to be a shell thumb!
 
 
 # dpkg
