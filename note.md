@@ -17,3 +17,7 @@ this is how to remove a pkg including its conf files
 
 # happygrep
 how to full text search
+
+#查看内核
+dpkg --get-selections | grep linux-image
+sudo apt-get remove kernelname
