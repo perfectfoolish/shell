@@ -25,3 +25,4 @@ sudo apt-get remove kernelname
 # zless
 zless 可以显示由gzip 压缩的文本文件的内容
 
+#
