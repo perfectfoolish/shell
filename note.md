@@ -25,4 +25,6 @@ sudo apt-get remove kernelname
 # zless
 zless 可以显示由gzip 压缩的文本文件的内容
 
-#
+# script
+
+script 记录输入过的命令，exit退出后产生一个typescript文件
