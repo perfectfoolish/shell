@@ -40,7 +40,7 @@ change_filecontent()
 #	pwd
 	cd $1
 	for filename in `find ./ -type f -exec grep -il "$2" {} \;`; do
-		sed -i s/$2/$3/g $filename
+		sed -i "s/$2/$3/g" $filename
 	done
 
 	return 0
