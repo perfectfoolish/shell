@@ -1,0 +1,10 @@
+#!/bin/bash
+
+a=1
+sum=0
+until [ $a -gt 100 ]
+do
+  let sum=$sum+a
+  let a=$a+1
+done
+echo "sum: $sum"
