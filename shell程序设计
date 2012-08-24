@@ -1,0 +1,292 @@
+shell 程序设计
+shell c 编写的 是用户和linux之间的接口程序
+编写shell脚本用于系统管理
+Bourne shell C shell Korn shell
+shell 命令有两种形式
+内部命令:内置在源码中，即存在内存中，比如  cd echo
+外部命令：存在于文件系统中某个目录下的单独的程序
+type command 查看命令类型
+
+Bash中的操作技巧
+tab 
+esc 然后？键 列出当前目录下部分匹配的文件名来完成文件名扩展
+history 做多调用500行历史命令
+
+linux的启动过程
+系统加电 BIOS（固话在主板上的rom 一小段程序 主要是硬件设置 查找 自检）启动
+    boot loader:从硬盘的零扇区（嘴靠近圆心）主引导记录，拷贝到内存，找到内核解压到内存操作系统自运行起来
+   系统引导————启动1号（执行硬件的配置 系统管理）进程 然后启动不同的终端
+
+
+shell按登录分：交互式非登录shell 非交互式shell  
+shell变量： 局部变量 环境变量 shell变量：shell设置的特殊变量，也是shell正确运行所必须的。
+
+用户变量
+    以字母 数字 _   组成   字母和下划线开头
+    数字开头的变量保留为shell使用
+  访问变量 MYVAR="hello"  echo $MYVAR
+  清除变量 unset MYVAR
+  查看所有变量  set
+  说明一个变量为只读 readonly (无法用unset清除)
+
+环境变量(quanju)
+    export 声明为全局变量   unset清楚  env 查看所有的环境变量
+    只是临时的 重开后不起作用
+
+
+常用的shell环境变量
+    HOME  保存注册 目录
+    PATH  保存用冒号分割的目录路径名
+    TERM  终端类型（xterm图形终端 linux文本终端）
+    UID   当前用户的标识符 取值是由数字构成的字符串
+    PWD   当前工作目录的绝对路径名 
+    PS1   主提示符 # $
+    PS2   辅助提示符 在输入行末尾 \ 输出该提示符
+    IFS    shell指定的缺省域分割符
+    LOGNAME 保存登录名
+    SHELL   保存缺省shell
+    RANDOM  产生随机数
+
+    
+数组变量
+  arry=(10 11 12)
+ 显示数组的第一个元素
+  echo $ {var[0]}
+  echo $ {array[0]}
+
+echo $ {#array[*]} 有N个元素
+echo $ {array[@]}
+echo $ {array[$]}
+
+
+变量/参数替换
+
+变量=${参数:-word}  参数为空或未设置 用word代替参数进行替换  参数之不变
+变量=${参数:=word}  参数为空或未设置 用word代替参数进行替换  参数值为 word
+变量=${参数:=word}  参数不为空  变量值为参数值  参数值不变
+变量=${参数:?message}  参数为空或未设置 message 作为标准错误打印出来
+变量=${参数:?message}  参数不为空 用参数进行替换变量值  参数之不变
+变量=${参数:+word}  参数设置 用word代替参数进行替换  参数之不变
+变量=${参数:+word}  参数未设置 变量值为空 参数之不变仍未空
+
+命令算数替换
+  var=`expr 4 \ * 9`   let var=2**3 (mi yun suan) 
+  myvar=`date` echo $myvar
+使用算数运算的结果替换算数表达式所在位置的内容$((1+1))
+
+
+
+引用：关掉一个字符的特殊意义  ""   ''  \
+单引号将消除被扩在单引号中的所有特殊字符的含义
+双引号以下字符的特殊含义不能删除：$  `  \$   \`   \"   \\
+
+语句
+
+if  
+  then
+  
+  elif
+  then
+  
+
+  else
+
+ fi
+
+
+test 测试 命令 test expression 或 [空格expression空格]
+文件测试 
+-e 文件存在则为真
+-r 文件存在且可读为真
+-w 文件存在且可写为真
+-x 文件存在且可执行为真
+-s 文件存在且非空为真
+-d 文件存在且为目录为真
+-f 文件存在且为普通文件为真
+-c 文件存在且为字符型特殊文件
+-b 文件存在且为块特殊文件
+
+字符串测试
+  =  等于则为真
+  != 不相等则为真
+  -z  字符串为空串为真
+  -n  字符串为非空串为真
+
+数值测shi
+-eq  等于
+-ne  非等于
+-lt  小于
+-gt  大于
+-le  小于等于
+-ge  大于等于
+
+测试时使用逻辑操作符
+-a  逻辑与  操作两边均为真 
+-o  逻辑或  操作两边一边为真则为真
+!   逻辑非  条件为假则为真
+优先级  !  -a  -o
+if [ -x file1 -a -x fiel2 ]  fiel1 file2  都存在且可执行则为真
+
+混合条件
+&& ||
+
+
+case语句
+
+case 值 in 
+   )
+   
+    ;;
+   )
+
+    ;;
+   *)
+   
+    ;;
+esac
+
+
+
+for循环
+for i in 1 2 3 4
+do 
+    echo $i
+done
+
+
+
+while循环
+x=0
+while [ $x -lt 10]
+do 
+
+     echo $x
+     x=$(($x+1))
+
+done
+
+
+select 循环
+
+select c in c1 c2 all none
+do
+   case $ in
+   )
+
+   ;;
+   )
+
+   ;;
+   
+
+   *)
+
+    ;;
+
+    esac
+done
+
+
+break跳出当前循环   continue 跳出整个循环
+
+
+
+位置参数是一种在调用shell程序的命令行中按照各自的位置决定的变量 是在程序名之后输入的参数
+
+ 位置参数用空格分开
+
+
+特殊变量
+用户只能根据shell的定义来使用这些变量，而不能重定义
+$#    位置参数的数量
+$*    所后位置参数的内容
+$?    命令执行后返回的状态 获取函数的返回值
+$$    当前进程的进程号
+$!    后台运行的最后一个进程号
+
+
+
+while getopts "a:bc" opt
+do 
+   case $opt in
+   a)
+
+    ;;
+   b)
+
+    ;;
+   c)
+
+    ;;
+   esac
+done
+
+
+
+read 读取用户输入的一整行
+
+
+标准输入 0
+标准输出 1
+标准错误 2
+
+awk '/briup'<fiel        more fiel |awk 'briup'   显示有briup的行
+
+输入输出重定向
+  将标准输出 标准错误重定向覆盖到同一文件
+   command >fiel 2>$1
+
+
+
+eval 合成一个命令
+OUTPUT=">out.file"
+eval echo hello $OUTPUT
+
+
+shift  以此向左移动一个位置 直到减到0
+
+wait   shell等待在后台启动的所有子进程结束
+
+
+内置符号命令
+
+. 执行文件
+: 空操作
+& 后台工作
+$() 命令替换 a=$(date) echo $a
+(()) 算数表达式计算 同let
+$(())  算数扩展（不用于被括起来的值中包含=的情形）
+[] 同 test
+[[]] 同上 
+
+
+
+
+bash调试
+
+启动调试  bash -选择项 shell程序文件名
+
+
+
+
+sudo aptitude update   更新软件
+sudo aptitude upgrade   更新系统
+
+sudo apt-get autoclean  清理旧版本的软件缓存
+sudo apt-get clean  清理所有的软件缓存
+sudo apt-get autoremove 删除系统不再使用的孤立软件
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
