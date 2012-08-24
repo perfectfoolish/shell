@@ -1,15 +1,14 @@
 #! /bin/sh 
-#
+# Program:
+#   use for installing asterisk
+# History:
+# 2012/08/24    lifulei     First release
 # mds-install.sh - Script of installing Multimedia Dispatching System server. Include:
 # 		Trunk    --- The modified Ceictims source code.
 #       Libpri   --- The libpri source code.
 #       Dahdi    --- The dahdi source code.
 #       Ffmpeg   --- The ffmpeg source code.
 #       Web      --- The web for the MDS.
-#
-# Modified by zhen.li<zhen.li@ceict.com.cn>
-#
-#
 
 ROOT_UID=0
 OS="Red Hat"
@@ -150,7 +149,16 @@ redhat_check_dependencies()
 	check_kernel_version
 
 	missing_packages=" "
-	
+
+	logger "Checking for vsftpd ..."
+	rpm -q vsftpd > /dev/null
+	if [ $? -eq 0 ]; then
+		show_status OK
+	else
+		show_status FAILED
+		missing_packages=$missing_packages"vsftpd"
+	fi
+
 	logger "Checking for Mysql ..."
 	rpm -q mysql > /dev/null
 	if [ $? -eq 0 ]; then
@@ -315,6 +323,11 @@ redhat_check_dependencies()
 		logger "Missing Packages $missing_packages\n"
 		for package in $missing_packages; do
 			case $package in
+				vsftpd)
+					echo -e "\n vsftpd."
+					echo -e "   Required for vsftpd packages."
+					echo -e "   Install vsftpd package(e.g yum install vsftpd)."
+					;;
 				mysql)
 					echo -e "\n Mysql."
 					echo -e "   Required for mysql packages."
@@ -636,8 +649,18 @@ fun_source_install()
 	fi	
 }
 
+deploy_vsftpd()
+{
+    chkconfig vsftpd on
+    service vsftpd start
+    /usr/sbin/adduser -d /opt/pic_ftp -g ftp -s /sbin/nologin pic    
+    passwd pic
+}
+
 deploy_mysql()
 {
+
+    chkconfig --level 35 mysqld on
 	service mysqld start
 
 	mysqladmin -u root password '2011ceict'
@@ -712,6 +735,3 @@ service iptables stop
 service ip6tables stop
 chkconfig iptables off
 chkconfig ip6tables off
-
-# Mysql auto run
-chkconfig --level 35 mysqld on
