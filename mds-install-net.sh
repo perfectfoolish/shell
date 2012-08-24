@@ -17,7 +17,6 @@ OS="Red Hat"
 FULL_PATH="$0"
 PROD_HOME=`cd ${FULL_PATH%/*}; pwd`
 CODE_SRC_DIR=${PROD_HOME}/src
-FILE_SRC_DIR=${PROD_HOME}/files
 MYSQL_SRC_DIR=${PROD_HOME}/mysql
 
 # Install Path
@@ -528,19 +527,19 @@ install_ceictserver()
 {
 	mkdir -p $AST_INSTALL_DIR
 
-	ls $CODE_SRC_DIR/ceictserver*.tar.gz > /dev/null 2>&1
+	ls $CODE_SRC_DIR/CMT*.tar.gz > /dev/null 2>&1
 	if [ $? -ne 0 ] ;then
-	    logger "ERROR: ceictserver package lost.\n" 1 0
+	    logger "ERROR: CMT package lost.\n" 1 0
 	    return 1
 	else
-	    ls $AST_INSTALL_DIR/ceictserver* > /dev/null 2>&1
+	    ls $AST_INSTALL_DIR/CMT* > /dev/null 2>&1
 	    if [ $? -eq 0 ]; then
-	        rm -rf $AST_INSTALL_DIR/ceictserver*
+	        rm -rf $AST_INSTALL_DIR/CMT*
 	    fi
-		tar -zxf $CODE_SRC_DIR/ceictserver*.tar.gz -C $AST_INSTALL_DIR
+		tar -zxf $CODE_SRC_DIR/CMT*.tar.gz -C $AST_INSTALL_DIR
 
-		chmod -R +x $AST_INSTALL_DIR/ceictserver*
-		cd $AST_INSTALL_DIR/ceictserver*
+		chmod -R +x $AST_INSTALL_DIR/CMT*
+		cd $AST_INSTALL_DIR/CMT*
 		./configure
 		if [ $? -ne 0 ]; then
 			return 1
@@ -566,6 +565,20 @@ install_ceictserver()
 			return 1
 		fi
 	fi
+}
+
+rename_conf()
+{
+	mv /etc/ceictims/ceict_extensions_ceict.conf /etc/ceictims/extensions_ceict.conf
+	mv /etc/ceictims/ceict_extensions_custom.conf /etc/ceictims/extensions_custom.conf 
+	mv /etc/ceictims/ceict_extensions_ptt.conf /etc/ceictims/extensions_ptt.conf
+	mv /etc/ceictims/ceict_globals_custom.conf /etc/ceictims/globals_custom.conf
+	mv /etc/ceictims/ceict_ptt_default_group.conf /etc/ceictims/ptt_default_group.conf
+	mv /etc/ceictims/ceict_ptt_group_options.conf /etc/ceictims/ptt_group_options.conf
+	mv /etc/ceictims/ceict_ptt_intercom_group.conf /etc/ceictims/ptt_intercom_group.conf
+	mv /etc/ceictims/ceict_sip_ceict.conf /etc/ceictims/sip_ceict.conf
+	mv /etc/ceictims/ceict_sip_custom.conf /etc/ceictims/sip_custom.conf
+	mv /etc/ceictims/ceict_sip_custom_post.conf /etc/ceictims/sip_custom_post.conf
 }
 
 fun_source_install()
@@ -612,6 +625,8 @@ fun_source_install()
 		install_ceictserver
 		if [ $? -eq 0 ]; then
 			show_status OK 0 1
+			rename_conf
+			service ceictims start
 		else
 			show_status FAILED 0 1
 			logger "ERROR: Install ceictserver failed!\n" 1 0
@@ -621,50 +636,39 @@ fun_source_install()
 	fi	
 }
 
-config_file()
-{
-	\cp $FILE_SRC_DIR/*.conf /etc/ceictims/
-	touch /etc/ceictims/sip_ceict.conf
-	touch /etc/ceictims/sip_custom_post.conf
-	touch /etc/ceictims/extensions_ceict.conf
-	touch /etc/ceictims/extensions_ptt.conf
-	touch /etc/ceictims/extensions_custom.conf
-	touch /etc/ceictims/ptt_intercom_group.conf
-	touch /etc/ceictims/ptt_default_group.conf
-	touch /etc/ceictims/ptt_group_options.conf
-}
-
-sh_file()
-{
-	chmod +x $FILE_SRC_DIR/*.sh
-	\cp $FILE_SRC_DIR/*.sh /var/lib/ceictims/agi-bin/
-
-	mkdir -p /var/lib/ceictims/agi-bin/zdzt
-	chmod 775 /var/lib/ceictims/agi-bin/zdzt
-	groupadd ceictims
-	useradd ceictims -g ceictims
-	chown ceictims:ceictims /var/lib/ceictims/agi-bin/zdzt
-
-}
-
-deploy_files()
-{
-	config_file
-	sh_file
-}
-
 deploy_mysql()
 {
 	service mysqld start
 
 	mysqladmin -u root password '2011ceict'
 	mysql -u root -p2011ceict < $MYSQL_SRC_DIR/allowlocalhost.sql 
+	if [ $? -eq 0 ]; then
+		show_status OK 0 1
+	else
+		show_status FAILED 0 1
+		logger "ERROR: allowlocalhost.sql failed !!\n"
+		exit 1
+	fi
 				
 	\cp $MYSQL_SRC_DIR/my.cnf /etc/
+	if [ $? -eq 0 ]; then
+		show_status OK 0 1
+	else
+		show_status FAILED 0 1
+		logger "ERROR: my.cnf failed !!\n"
+		exit 1
+	fi
 											
 	service mysqld restart
 
 	mysql -u root -p2011ceict < $MYSQL_SRC_DIR/ims.sql
+	if [ $? -eq 0 ]; then
+		show_status OK 0 1
+	else
+		show_status FAILED 0 1
+		logger "ERROR: ims.sql failed !!\n"
+		exit 1
+	fi
 }
 
 #---------------------------------------------------------------------------------------
@@ -695,18 +699,13 @@ fi
 redhat_check_dependencies
 
 # Install source code
-#fun_source_install
+fun_source_install
 
 # Close SElinux
 sed -i '/SELINUX=enforcing/s/enforcing/disabled/' /etc/selinux/config
 
-# Deploy files
-
-#deploy_files
-
 # Deploy mysql
-
-#deploy_mysql
+deploy_mysql
 
 # Close iptable
 service iptables stop
@@ -715,8 +714,4 @@ chkconfig iptables off
 chkconfig ip6tables off
 
 # Mysql auto run
-
 chkconfig --level 35 mysqld on
-
-#reboot
-
