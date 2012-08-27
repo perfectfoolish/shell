@@ -654,7 +654,7 @@ deploy_vsftpd()
     chkconfig vsftpd on
     service vsftpd start
     /usr/sbin/adduser -d /opt/pic_ftp -g ftp -s /sbin/nologin pic    
-    passwd pic
+    echo "2011ceict" | passwd --stdin pic
 }
 
 deploy_mysql()
