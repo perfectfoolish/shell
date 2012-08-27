@@ -31,4 +31,7 @@ script 记录输入过的命令，exit退出后产生一个typescript文件
 
 #git
 
+git revert
 
+git reset --soft HEAD^   
+git commit -a -c ORIG_HEAD
