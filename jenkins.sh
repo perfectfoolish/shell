@@ -19,11 +19,21 @@
 #
 #00 00 * * 1,3
 
+
+#!/bin/bash
+
+VERSION=1.1.3.`date +%Y%m%d`
+
 rm -rf MCSS_Server CMT*
 git clone git://192.168.0.23/MCSS_Server
 chmod -R +x MCSS_Server
-mv ./MCSS_Server/ceictserver CMT-1.1.3.`date +%Y%m%d`
-tar zcf CMT-1.1.3.`date +%Y%m%d`.tar.gz CMT-1.1.3.`date +%Y%m%d`
-mv CMT-1.1.3.`date +%Y%m%d`.tar.gz SOURCES/
-sed -i "s/^Version:.*/Version: 1.1.3.`date +%Y%m%d`/" SPECS/CMT.spec
+mv ./MCSS_Server/ceictserver CMT-$VERSION
+tar zcf CMT-$VERSION.tar.gz CMT-$VERSION
+mv CMT-$VERSION.tar.gz SOURCES/
+sed -i "s/^Version:.*/Version: $VERSION/" SPECS/CMT.spec
 rpmbuild --define '_topdir '`pwd` -ba SPECS/CMT.spec
+
+/var/lib/jenkins/tools/Maven/maven/bin/mvn deploy:deploy-file -X -Durl=http://192.168.0.20:8081/nexus/content/repositories/releases/ -DrepositoryId=ceict -DgroupId=com.ceict -DartifactId=CMT -Dpackaging=rpm -Dfile=/var/lib/jenkins/jobs/CMT_build/workspace/RPMS/i386/CMT-$VERSION-1.i386.rpm -Dversion=$VERSION
+
+/var/lib/jenkins/tools/Maven/maven/bin/mvn deploy:deploy-file -X -Durl=http://192.168.0.20:8081/nexus/content/repositories/releases/ -DrepositoryId=ceict -DgroupId=com.ceict -DartifactId=CMT -Dpackaging=tar.gz -Dfile=/var/lib/jenkins/jobs/CMT_build/workspace/RPMS/i386/CMT-$VERSION-1.i386.tar.gz
+-Dversion=$VERSION
