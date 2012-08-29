@@ -29,11 +29,6 @@ LOG_ENABLE=YES
 LOG_DIR="/root/src/log"
 INSTALL_LOG="${LOG_DIR}/install.log.$(date +%F-%H-%M)"
 
-LIBPRI_AUTO_INSTALL="YES"
-DAHDI_AUTO_INSTALL="YES"
-AST_AUTO_INSTALL="YES"
-FFMPEG_AUTO_INSTALL="NO"
-
 # Create log dir
 mkdir -p $LOG_DIR
 
@@ -146,8 +141,6 @@ check_kernel_version()
 
 redhat_check_dependencies()
 {
-	check_kernel_version
-
 	missing_packages=" "
 
 	logger "Checking for vsftpd ..."
@@ -717,20 +710,36 @@ if [ $? -eq 0 ]; then
 else
 	show_status FAILED
 fi
+# Check Kernel
 
-# Check dependences
+check_kernel_version
+
+# Check Dependences
+
 redhat_check_dependencies
 
-# Install source code
+# Install Source code
+LIBPRI_AUTO_INSTALL="YES"
+DAHDI_AUTO_INSTALL="YES"
+AST_AUTO_INSTALL="YES"
+FFMPEG_AUTO_INSTALL="NO"
+
 fun_source_install
 
 # Close SElinux
+
 sed -i '/SELINUX=enforcing/s/enforcing/disabled/' /etc/selinux/config
 
-# Deploy mysql
+# FTP
+
+deploy_vsftpd
+
+# Deploy Mysql
+
 deploy_mysql
 
-# Close iptable
+# Close Iptable
+
 service iptables stop
 service ip6tables stop
 chkconfig iptables off
