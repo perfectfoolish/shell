@@ -1,0 +1,38 @@
+  
+  2、mysql>GRANT   ALL   PRIVILEGES   ON   *.*   TO   'root'@'%' IDENTIFIED BY 'mypassword'    WITH   GRANT   OPTION;
+        //赋予任何主机访问数据的权限   
+  3、mysql>FLUSH   PRIVILEGES;
+  
+  
+  
+
+  
+  
+
+  
+  
+一、连接MYSQL
+　　格式：mysql -h主机地址 -u用户名 －p用户密码
+　　1．例1：连接到本机上的MYSQL。
+键入命令mysql -uroot -p，回车后提示你输密码，如果刚安装好MYSQL，超级用户root是没有密码的，故直接回车即可进入到MYSQL中了，MYSQL的提示符是：mysql>
+
+二、修改密码
+　　格式：mysqladmin -u用户名 -p旧密码 password 新密码
+　　1．例1：给root加个密码ab12。键入以下命令
+　　mysqladmin -uroot -password ab12
+　　注：因为开始时root没有密码，所以-p旧密码一项就可以省略了。
+　　2．例2：再将root的密码改为djg345。
+　　mysqladmin -uroot -pab12 password djg345
+
+mysql -u $USERNAME -p$PASSWORD < $TMPFILE
+
+#mysqladmin -uroot -password 2011ceict
+
+mysql>GRANT   ALL   PRIVILEGES   ON   *.*   TO   'root'@'localhost' IDENTIFIED BY '2011ceict'    WITH   GRANT   OPTION 
+mysql>FLUSH   PRIVILEGES
+
+
+mysql -u root -p2011ceict < /root/src/ims.sql
+
+
+[root@localhost ~]#  ls -rltl /usr/bin

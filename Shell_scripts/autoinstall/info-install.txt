@@ -1,0 +1,1517 @@
+[root@localhost ~]# ./net_version-1.0.0.sh
+Checking for mysql...
+mysql is OK
+Checking for mysql-devel...
+mysql-devel is FAILED
+Checking for mysql-server...
+mysql-server is FAILED
+Checking for C development tools ...
+gcc is FAILED
+Checking for C++ development tools...
+gcc-c++ is FAILED
+Checking for Make Utility...
+make is OK
+Checking for Ncurses Library...
+ncurses is OK
+Checking for ncurses-devel library...
+ncurses-devel is FAILED
+Checking for bison ...
+bison is FAILED
+Checking for bison-devel ...
+bison-devel is FAILED
+Checking for openssl ...
+openssl is OK
+Checking for openssl-devel...
+openssl-devel is FAILED
+Checking for gnutls-devel...
+gnutls-devel is FAILED
+Checking for zlib...
+zlib is OK
+Checking for zlib-devel...
+zlib-devel is FAILED
+Checking for kernel development packages...
+kernel-devel-2.6.18-238.el5PAE is FAILED
+Checking for libxml2-devel...
+libxml2-devel is FAILED
+mysql-devel mysql-server gcc gcc-c++ ncurses-devel bison bison-devel openssl-devel gnutls-devel zlib-devel kernel-devel-2.6.18-238.el5PAE libxml2-devel
+WARNING: You are missing some prerequisites!!!
+Missing Packages  mysql-devel mysql-server gcc gcc-c++ ncurses-devel bison bison-devel openssl-devel gnutls-devel zlib-devel kernel-devel-2.6.18-238.el5PAE libxml2-devel \n
+
+ C Compiler (gcc).
+        Required for compiling packages.
+        Install gcc package(e.g yum install gcc).
+        Ncurses-devel library.
+        Required for compiling packages.
+        Install ncurse development package(e.g yum install ncurses-devel).
+
+ Bison.
+        Required for compiling packages.
+        Install bison package (e.g yum install bison).
+
+ Bison library.
+        Required for compiling packages.
+        Install bison-devel package (e.g yum install bison-devel).
+
+ Gnutls Library.
+        Required for compiling packages.
+        Install gnutls-devel package(e.g yum install gnutls-devel).
+
+ Zlib development packages.
+        Required for compiling packages.
+        Install zlib-devel package(e.g yum install zlib-devel).
+
+ Kernel development packages.
+        Required for compiling packages.
+        Install kernel-devel-2.6.18-238.el5PAE package (e.g yum install kernel-devel-2.6.18-238.el5PAE).
+
+ libxml2 development packages.
+        Required for compiling packages.
+        Install libxml2-devel packages(e.g yum install libxml2-devel).
+
+yum install -y mysql-devel
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.averse.net
+ * extras: mirrors.sin3.sg.voxel.net
+ * updates: mirrors.sin3.sg.voxel.net
+Setting up Install Process
+Resolving Dependencies
+--> Running transaction check
+---> Package mysql-devel.i386 0:5.0.95-1.el5_7.1 set to be updated
+--> Processing Dependency: mysql = 5.0.95-1.el5_7.1 for package: mysql-devel
+--> Processing Dependency: openssl-devel for package: mysql-devel
+--> Running transaction check
+---> Package mysql.i386 0:5.0.95-1.el5_7.1 set to be updated
+---> Package openssl-devel.i386 0:0.9.8e-22.el5_8.3 set to be updated
+--> Processing Dependency: openssl = 0.9.8e-22.el5_8.3 for package: openssl-devel
+--> Processing Dependency: zlib-devel for package: openssl-devel
+--> Processing Dependency: krb5-devel for package: openssl-devel
+--> Running transaction check
+---> Package krb5-devel.i386 0:1.6.1-70.el5 set to be updated
+--> Processing Dependency: krb5-libs = 1.6.1-70.el5 for package: krb5-devel
+--> Processing Dependency: libselinux-devel for package: krb5-devel
+--> Processing Dependency: e2fsprogs-devel for package: krb5-devel
+--> Processing Dependency: keyutils-libs-devel for package: krb5-devel
+---> Package openssl.i686 0:0.9.8e-22.el5_8.3 set to be updated
+---> Package zlib-devel.i386 0:1.2.3-4.el5 set to be updated
+--> Running transaction check
+---> Package e2fsprogs-devel.i386 0:1.39-33.el5 set to be updated
+--> Processing Dependency: e2fsprogs-libs = 1.39-33.el5 for package: e2fsprogs-devel
+---> Package keyutils-libs-devel.i386 0:1.2-1.el5 set to be updated
+--> Processing Dependency: krb5-libs = 1.6.1-55.el5 for package: krb5-workstation
+---> Package krb5-libs.i386 0:1.6.1-70.el5 set to be updated
+---> Package libselinux-devel.i386 0:1.33.4-5.7.el5 set to be updated
+--> Processing Dependency: libsepol-devel >= 1.15.2-1 for package: libselinux-devel
+--> Running transaction check
+--> Processing Dependency: e2fsprogs-libs = 1.39-23.el5_5.1 for package: e2fsprogs
+---> Package e2fsprogs-libs.i386 0:1.39-33.el5 set to be updated
+---> Package krb5-workstation.i386 0:1.6.1-70.el5 set to be updated
+---> Package libsepol-devel.i386 0:1.15.2-3.el5 set to be updated
+--> Running transaction check
+---> Package e2fsprogs.i386 0:1.39-33.el5 set to be updated
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+=====================================================================================================================================================================================================
+ Package                                               Arch                                   Version                                                Repository                                 Size
+=====================================================================================================================================================================================================
+Installing:
+ mysql-devel                                           i386                                   5.0.95-1.el5_7.1                                       updates                                   2.4 M
+Installing for dependencies:
+ e2fsprogs-devel                                       i386                                   1.39-33.el5                                            base                                      573 k
+ keyutils-libs-devel                                   i386                                   1.2-1.el5                                              base                                       27 k
+ krb5-devel                                            i386                                   1.6.1-70.el5                                           base                                      1.9 M
+ libselinux-devel                                      i386                                   1.33.4-5.7.el5                                         base                                      144 k
+ libsepol-devel                                        i386                                   1.15.2-3.el5                                           base                                      187 k
+ openssl-devel                                         i386                                   0.9.8e-22.el5_8.3                                      updates                                   1.9 M
+ zlib-devel                                            i386                                   1.2.3-4.el5                                            base                                      101 k
+Updating for dependencies:
+ e2fsprogs                                             i386                                   1.39-33.el5                                            base                                      827 k
+ e2fsprogs-libs                                        i386                                   1.39-33.el5                                            base                                      120 k
+ krb5-libs                                             i386                                   1.6.1-70.el5                                           base                                      669 k
+ krb5-workstation                                      i386                                   1.6.1-70.el5                                           base                                      889 k
+ mysql                                                 i386                                   5.0.95-1.el5_7.1                                       updates                                   4.9 M
+ openssl                                               i686                                   0.9.8e-22.el5_8.3                                      updates                                   1.5 M
+
+Transaction Summary
+=====================================================================================================================================================================================================
+Install       8 Package(s)
+Upgrade       6 Package(s)
+
+Total download size: 16 M
+Downloading Packages:
+(1/14): keyutils-libs-devel-1.2-1.el5.i386.rpm                                                                                                                                |  27 kB     00:00
+(2/14): zlib-devel-1.2.3-4.el5.i386.rpm                                                                                                                                       | 101 kB     00:03
+(3/14): e2fsprogs-libs-1.39-33.el5.i386.rpm                                                                                                                                   | 120 kB     00:04
+(4/14): libselinux-devel-1.33.4-5.7.el5.i386.rpm                                                                                                                              | 144 kB     00:05
+(5/14): libsepol-devel-1.15.2-3.el5.i386.rpm                                                                                                                                  | 187 kB     00:06
+(6/14): e2fsprogs-devel-1.39-33.el5.i386.rpm                                                                                                                                  | 573 kB     00:20
+(7/14): krb5-libs-1.6.1-70.el5.i386.rpm                                                                                                                                       | 669 kB     00:26
+(8/14): e2fsprogs-1.39-33.el5.i386.rpm                                                                                                                                        | 827 kB     00:33
+(9/14): krb5-workstation-1.6.1-70.el5.i386.rpm                                                                                                                                |  56 kB     00:31 ...
+http://mirror.averse.net/centos/5.8/os/i386/CentOS/krb5-workstation-1.6.1-70.el5.i386.rpm: [Errno 4] Socket Error: timed out
+Trying other mirror.
+(9/14): krb5-workstation-1.6.1-70.el5.i386.rpm                                                                                                                                | 889 kB     00:37
+(10/14): openssl-0.9.8e-22.el5_8.3.i686.rpm                                                                                                                                   | 1.5 MB     00:52
+(11/14): krb5-devel-1.6.1-70.el5.i386.rpm                                                                                                                                     | 218 kB     00:31 ...
+http://centos.mirror.cdnetworks.com/5.8/os/i386/CentOS/krb5-devel-1.6.1-70.el5.i386.rpm: [Errno -1] Package does not match intended download
+Trying other mirror.
+(11/14): krb5-devel-1.6.1-70.el5.i386.rpm                                                                                                                                     | 1.9 MB     01:25
+(12/14): openssl-devel-0.9.8e-22.el5_8.3.i386.rpm                                                                                                                             | 120 kB     00:34 ...
+http://mirrors.sin3.sg.voxel.net/centos/5.8/updates/i386/RPMS/openssl-devel-0.9.8e-22.el5_8.3.i386.rpm: [Errno 4] Socket Error: timed out
+Trying other mirror.
+(12/14): openssl-devel-0.9.8e-22.el5_8.3.i386.rpm                                                                                                                             | 1.9 MB     01:19
+(13/14): mysql-devel-5.0.95-1.el5_7.1.i386.rpm                                                                                                                                | 2.4 MB     01:29
+(14/14): mysql-5.0.95-1.el5_7.1.i386.rpm                                                                                                                                      | 4.9 MB     02:58
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                 22 kB/s |  16 MB     12:21
+warning: rpmts_HdrFromFdno: Header V3 DSA signature: NOKEY, key ID e8562897
+base/gpgkey                                                                                                                                                                   | 1.5 kB     00:00
+Importing GPG key 0xE8562897 "CentOS-5 Key (CentOS 5 Official Signing Key) <centos-5-key@centos.org>" from /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+Running rpm_check_debug
+Running Transaction Test
+Finished Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Installing     : zlib-devel                                                                                                                                                                   1/20
+  Installing     : libsepol-devel                                                                                                                                                               2/20
+  Installing     : libselinux-devel                                                                                                                                                             3/20
+  Installing     : keyutils-libs-devel                                                                                                                                                          4/20
+  Updating       : e2fsprogs-libs                                                                                                                                                               5/20
+  Updating       : krb5-libs                                                                                                                                                                    6/20
+  Updating       : openssl                                                                                                                                                                      7/20
+  Updating       : mysql                                                                                                                                                                        8/20
+  Updating       : krb5-workstation                                                                                                                                                             9/20
+  Updating       : e2fsprogs                                                                                                                                                                   10/20
+  Installing     : e2fsprogs-devel                                                                                                                                                             11/20
+  Installing     : krb5-devel                                                                                                                                                                  12/20
+  Installing     : openssl-devel                                                                                                                                                               13/20
+  Installing     : mysql-devel                                                                                                                                                                 14/20
+  Cleanup        : e2fsprogs                                                                                                                                                                   15/20
+  Cleanup        : openssl                                                                                                                                                                     16/20
+  Cleanup        : krb5-workstation                                                                                                                                                            17/20
+  Cleanup        : mysql                                                                                                                                                                       18/20
+  Cleanup        : e2fsprogs-libs                                                                                                                                                              19/20
+  Cleanup        : krb5-libs                                                                                                                                                                   20/20
+
+Installed:
+  mysql-devel.i386 0:5.0.95-1.el5_7.1
+
+Dependency Installed:
+  e2fsprogs-devel.i386 0:1.39-33.el5        keyutils-libs-devel.i386 0:1.2-1.el5    krb5-devel.i386 0:1.6.1-70.el5    libselinux-devel.i386 0:1.33.4-5.7.el5    libsepol-devel.i386 0:1.15.2-3.el5
+  openssl-devel.i386 0:0.9.8e-22.el5_8.3    zlib-devel.i386 0:1.2.3-4.el5
+
+Dependency Updated:
+  e2fsprogs.i386 0:1.39-33.el5 e2fsprogs-libs.i386 0:1.39-33.el5 krb5-libs.i386 0:1.6.1-70.el5 krb5-workstation.i386 0:1.6.1-70.el5 mysql.i386 0:5.0.95-1.el5_7.1 openssl.i686 0:0.9.8e-22.el5_8.3
+
+Complete!
+yum install -y mysql-server
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.bit.edu.cn
+ * extras: mirror.bit.edu.cn
+ * updates: mirrors.btte.net
+Setting up Install Process
+Resolving Dependencies
+--> Running transaction check
+---> Package mysql-server.i386 0:5.0.95-1.el5_7.1 set to be updated
+--> Processing Dependency: perl-DBD-MySQL for package: mysql-server
+--> Running transaction check
+---> Package perl-DBD-MySQL.i386 0:3.0007-2.el5 set to be updated
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+=====================================================================================================================================================================================================
+ Package                                            Arch                                     Version                                               Repository                                   Size
+=====================================================================================================================================================================================================
+Installing:
+ mysql-server                                       i386                                     5.0.95-1.el5_7.1                                      updates                                     9.8 M
+Installing for dependencies:
+ perl-DBD-MySQL                                     i386                                     3.0007-2.el5                                          base                                        148 k
+
+Transaction Summary
+=====================================================================================================================================================================================================
+Install       2 Package(s)
+Upgrade       0 Package(s)
+
+Total download size: 10 M
+Downloading Packages:
+(1/2): perl-DBD-MySQL-3.0007-2.el5.i386.rpm                                                                                                                                   | 148 kB     00:05
+(2/2): mysql-server-5.0.95-1.el5_7.1.i386.rpm                                                                                                                                 | 9.8 MB     05:58
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                 28 kB/s |  10 MB     06:03
+Running rpm_check_debug
+Running Transaction Test
+Finished Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Installing     : perl-DBD-MySQL                                                                                                                                                                1/2
+  Installing     : mysql-server                                                                                                                                                                  2/2
+
+Installed:
+  mysql-server.i386 0:5.0.95-1.el5_7.1
+
+Dependency Installed:
+  perl-DBD-MySQL.i386 0:3.0007-2.el5
+
+Complete!
+yum install -y gcc
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.bit.edu.cn
+ * extras: mirror.bit.edu.cn
+ * updates: mirrors.btte.net
+Setting up Install Process
+Resolving Dependencies
+--> Running transaction check
+---> Package gcc.i386 0:4.1.2-52.el5 set to be updated
+--> Processing Dependency: cpp = 4.1.2-52.el5 for package: gcc
+--> Processing Dependency: libgcc >= 4.1.2-52.el5 for package: gcc
+--> Processing Dependency: glibc-devel >= 2.2.90-12 for package: gcc
+--> Running transaction check
+---> Package cpp.i386 0:4.1.2-52.el5 set to be updated
+---> Package glibc-devel.i386 0:2.5-81.el5_8.2 set to be updated
+--> Processing Dependency: glibc-headers = 2.5-81.el5_8.2 for package: glibc-devel
+--> Processing Dependency: glibc = 2.5-81.el5_8.2 for package: glibc-devel
+--> Processing Dependency: glibc-headers for package: glibc-devel
+---> Package libgcc.i386 0:4.1.2-52.el5 set to be updated
+--> Running transaction check
+--> Processing Dependency: glibc = 2.5-58 for package: nscd
+---> Package glibc.i686 0:2.5-81.el5_8.2 set to be updated
+--> Processing Dependency: glibc-common = 2.5-81.el5_8.2 for package: glibc
+---> Package glibc-headers.i386 0:2.5-81.el5_8.2 set to be updated
+--> Processing Dependency: kernel-headers >= 2.2.1 for package: glibc-headers
+--> Processing Dependency: kernel-headers for package: glibc-headers
+--> Running transaction check
+---> Package glibc-common.i386 0:2.5-81.el5_8.2 set to be updated
+---> Package kernel-headers.i386 0:2.6.18-308.4.1.el5 set to be updated
+---> Package nscd.i386 0:2.5-81.el5_8.2 set to be updated
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+=====================================================================================================================================================================================================
+ Package                                           Arch                                    Version                                                  Repository                                  Size
+=====================================================================================================================================================================================================
+Installing:
+ gcc                                               i386                                    4.1.2-52.el5                                             base                                       5.2 M
+Installing for dependencies:
+ glibc-devel                                       i386                                    2.5-81.el5_8.2                                           updates                                    2.0 M
+ glibc-headers                                     i386                                    2.5-81.el5_8.2                                           updates                                    606 k
+ kernel-headers                                    i386                                    2.6.18-308.4.1.el5                                       updates                                    1.3 M
+Updating for dependencies:
+ cpp                                               i386                                    4.1.2-52.el5                                             base                                       2.7 M
+ glibc                                             i686                                    2.5-81.el5_8.2                                           updates                                    5.3 M
+ glibc-common                                      i386                                    2.5-81.el5_8.2                                           updates                                     16 M
+ libgcc                                            i386                                    4.1.2-52.el5                                             base                                        97 k
+ nscd                                              i386                                    2.5-81.el5_8.2                                           updates                                    172 k
+
+Transaction Summary
+=====================================================================================================================================================================================================
+Install       4 Package(s)
+Upgrade       5 Package(s)
+
+Total download size: 34 M
+Downloading Packages:
+(1/9): libgcc-4.1.2-52.el5.i386.rpm                                                                                                                                           |  97 kB     00:03
+(2/9): nscd-2.5-81.el5_8.2.i386.rpm                                                                                                                                           | 172 kB     00:06
+(3/9): glibc-headers-2.5-81.el5_8.2.i386.rpm                                                                                                                                  | 606 kB     00:21
+(4/9): kernel-headers-2.6.18-308.4.1.el5.i386.rpm                                                                                                                             | 1.3 MB     00:48
+(5/9): glibc-devel-2.5-81.el5_8.2.i386.rpm                                                                                                                                    | 2.0 MB     01:14
+(6/9): cpp-4.1.2-52.el5.i386.rpm                                                                                                                                              | 2.7 MB     02:15
+(7/9): gcc-4.1.2-52.el5.i386.rpm                                                                                                                                              | 5.2 MB     03:51
+(8/9): glibc-2.5-81.el5_8.2.i686.rpm                                                                                                                                          | 144 kB     00:35 ...
+http://mirrors.btte.net/centos/5.8/updates/i386/RPMS/glibc-2.5-81.el5_8.2.i686.rpm: [Errno 4] Socket Error: timed out
+Trying other mirror.
+(8/9): glibc-2.5-81.el5_8.2.i686.rpm                                                                                                                                          | 152 kB     00:00 ...
+http://mirrors.163.com/centos/5.8/updates/i386/RPMS/glibc-2.5-81.el5_8.2.i686.rpm: [Errno 4] Socket Error: timed out
+Trying other mirror.
+(8/9): glibc-2.5-81.el5_8.2.i686.rpm                                                                                                                                          | 4.7 MB     04:33 ...
+http://centos.mirror.cdnetworks.com/5.8/updates/i386/RPMS/glibc-2.5-81.el5_8.2.i686.rpm: [Errno -1] Package does not match intended download
+Trying other mirror.
+(8/9): glibc-2.5-81.el5_8.2.i686.rpm                                                                                                                                          | 5.3 MB     00:22
+(9/9): glibc-common-2.5-81.el5_8.2.i386.rpm                                                                                                                                   |  16 MB     10:00
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                 23 kB/s |  34 MB     24:49
+Running rpm_check_debug
+Running Transaction Test
+Finished Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Updating       : glibc-common                                                                                                                                                                 1/14
+  Updating       : libgcc                                                                                                                                                                       2/14
+  Updating       : glibc                                                                                                                                                                        3/14
+  Updating       : cpp                                                                                                                                                                          4/14
+  Updating       : nscd                                                                                                                                                                         5/14
+  Installing     : kernel-headers                                                                                                                                                               6/14
+  Installing     : glibc-headers                                                                                                                                                                7/14
+  Installing     : glibc-devel                                                                                                                                                                  8/14
+  Installing     : gcc                                                                                                                                                                          9/14
+  Cleanup        : glibc                                                                                                                                                                       10/14
+  Cleanup        : glibc-common                                                                                                                                                                11/14
+  Cleanup        : libgcc                                                                                                                                                                      12/14
+  Cleanup        : cpp                                                                                                                                                                         13/14
+  Cleanup        : nscd                                                                                                                                                                        14/14
+
+Installed:
+  gcc.i386 0:4.1.2-52.el5
+
+Dependency Installed:
+  glibc-devel.i386 0:2.5-81.el5_8.2                             glibc-headers.i386 0:2.5-81.el5_8.2                             kernel-headers.i386 0:2.6.18-308.4.1.el5
+
+Dependency Updated:
+  cpp.i386 0:4.1.2-52.el5            glibc.i686 0:2.5-81.el5_8.2            glibc-common.i386 0:2.5-81.el5_8.2            libgcc.i386 0:4.1.2-52.el5            nscd.i386 0:2.5-81.el5_8.2
+
+Complete!
+yum install -y gcc-c++
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: centos.mirror.cdnetworks.com
+ * extras: centos.mirror.cdnetworks.com
+ * updates: centos.mirror.cdnetworks.com
+Setting up Install Process
+Resolving Dependencies
+--> Running transaction check
+---> Package gcc-c++.i386 0:4.1.2-52.el5 set to be updated
+--> Processing Dependency: libstdc++-devel = 4.1.2-52.el5 for package: gcc-c++
+--> Processing Dependency: libstdc++ = 4.1.2-52.el5 for package: gcc-c++
+--> Running transaction check
+---> Package libstdc++.i386 0:4.1.2-52.el5 set to be updated
+---> Package libstdc++-devel.i386 0:4.1.2-52.el5 set to be updated
+base/filelists                                                                                                                                                                | 3.0 MB     03:08
+extras/filelists_db                                                                                                                                                           | 213 kB     00:13
+updates/filelists_db                                                                                                                                                          | 225 kB     01:04 ...
+http://centos.mirror.cdnetworks.com/5.8/updates/i386/repodata/filelists.sqlite.bz2: [Errno -1] Metadata file does not match checksum
+Trying other mirror.
+updates/filelists_db                                                                                                                                                          | 1.1 MB     00:40
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+=====================================================================================================================================================================================================
+ Package                                              Arch                                      Version                                              Repository                                 Size
+=====================================================================================================================================================================================================
+Installing:
+ gcc-c++                                              i386                                      4.1.2-52.el5                                         base                                      3.4 M
+Installing for dependencies:
+ libstdc++-devel                                      i386                                      4.1.2-52.el5                                         base                                      2.8 M
+Updating for dependencies:
+ libstdc++                                            i386                                      4.1.2-52.el5                                         base                                      363 k
+
+Transaction Summary
+=====================================================================================================================================================================================================
+Install       2 Package(s)
+Upgrade       1 Package(s)
+
+Total download size: 6.6 M
+Downloading Packages:
+(1/3): libstdc++-4.1.2-52.el5.i386.rpm                                                                                                                                        | 363 kB     00:25
+(2/3): libstdc++-devel-4.1.2-52.el5.i386.rpm                                                                                                                                  | 2.8 MB     02:33
+(3/3): gcc-c++-4.1.2-52.el5.i386.rpm                                                                                                                                          | 1.5 MB     01:27 ...
+http://centos.mirror.cdnetworks.com/5.8/os/i386/CentOS/gcc-c%2B%2B-4.1.2-52.el5.i386.rpm: [Errno -1] Package does not match intended download
+Trying other mirror.
+(3/3): gcc-c++-4.1.2-52.el5.i386.rpm                                                                                                                                          | 3.4 MB     01:06
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                 20 kB/s | 6.6 MB     05:33
+Running rpm_check_debug
+Running Transaction Test
+Finished Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Updating       : libstdc++                                                                                                                                                                     1/4
+  Installing     : libstdc++-devel                                                                                                                                                               2/4
+  Installing     : gcc-c++                                                                                                                                                                       3/4
+  Cleanup        : libstdc++                                                                                                                                                                     4/4
+
+Installed:
+  gcc-c++.i386 0:4.1.2-52.el5
+
+Dependency Installed:
+  libstdc++-devel.i386 0:4.1.2-52.el5
+
+Dependency Updated:
+  libstdc++.i386 0:4.1.2-52.el5
+
+Complete!
+yum install -y ncurses-devel
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: centos.mirror.cdnetworks.com
+ * extras: centos.mirror.cdnetworks.com
+ * updates: centos.mirror.cdnetworks.com
+base                                                                                                                                                                          | 1.1 kB     00:00
+extras                                                                                                                                                                        | 2.1 kB     00:00
+updates                                                                                                                                                                       | 1.9 kB     00:00
+Setting up Install Process
+Resolving Dependencies
+--> Running transaction check
+---> Package ncurses-devel.i386 0:5.5-24.20060715 set to be updated
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+=====================================================================================================================================================================================================
+ Package                                            Arch                                      Version                                                Repository                                 Size
+=====================================================================================================================================================================================================
+Installing:
+ ncurses-devel                                      i386                                      5.5-24.20060715                                        base                                      1.6 M
+
+Transaction Summary
+=====================================================================================================================================================================================================
+Install       1 Package(s)
+Upgrade       0 Package(s)
+
+Total download size: 1.6 M
+Downloading Packages:
+ncurses-devel-5.5-24.20060715.i386.rpm                                                                                                                                        | 1.6 MB     01:25
+Running rpm_check_debug
+Running Transaction Test
+Finished Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Installing     : ncurses-devel                                                                                                                                                                 1/1
+
+Installed:
+  ncurses-devel.i386 0:5.5-24.20060715
+
+Complete!
+yum install -y bison
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.bit.edu.cn
+ * extras: mirror.bit.edu.cn
+ * updates: mirrors.btte.net
+Setting up Install Process
+Resolving Dependencies
+--> Running transaction check
+---> Package bison.i386 0:2.3-2.1 set to be updated
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+=====================================================================================================================================================================================================
+ Package                                        Arch                                          Version                                            Repository                                     Size
+=====================================================================================================================================================================================================
+Installing:
+ bison                                          i386                                          2.3-2.1                                            base                                          535 k
+
+Transaction Summary
+=====================================================================================================================================================================================================
+Install       1 Package(s)
+Upgrade       0 Package(s)
+
+Total download size: 535 k
+Downloading Packages:
+bison-2.3-2.1.i386.rpm                                                                                                                                                        | 535 kB     00:18
+Running rpm_check_debug
+Running Transaction Test
+Finished Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Installing     : bison                                                                                                                                                                         1/1
+
+Installed:
+  bison.i386 0:2.3-2.1
+
+Complete!
+yum install -y bison-devel
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.bit.edu.cn
+ * extras: mirror.bit.edu.cn
+ * updates: mirrors.btte.net
+Setting up Install Process
+Resolving Dependencies
+--> Running transaction check
+---> Package bison-devel.i386 0:2.3-2.1 set to be updated
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+=====================================================================================================================================================================================================
+ Package                                             Arch                                         Version                                         Repository                                    Size
+=====================================================================================================================================================================================================
+Installing:
+ bison-devel                                         i386                                         2.3-2.1                                         base                                         7.2 k
+
+Transaction Summary
+=====================================================================================================================================================================================================
+Install       1 Package(s)
+Upgrade       0 Package(s)
+
+Total download size: 7.2 k
+Downloading Packages:
+bison-devel-2.3-2.1.i386.rpm                                                                                                                                                  | 7.2 kB     00:00
+Running rpm_check_debug
+Running Transaction Test
+Finished Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Installing     : bison-devel                                                                                                                                                                   1/1
+
+Installed:
+  bison-devel.i386 0:2.3-2.1
+
+Complete!
+yum install -y openssl-devel
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.btte.net
+ * extras: mirrors.btte.net
+ * updates: mirrors.btte.net
+Setting up Install Process
+Package openssl-devel-0.9.8e-22.el5_8.3.i386 already installed and latest version
+Nothing to do
+yum install -y gnutls-devel
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.bit.edu.cn
+ * extras: mirror.bit.edu.cn
+ * updates: mirrors.btte.net
+Setting up Install Process
+Resolving Dependencies
+--> Running transaction check
+---> Package gnutls-devel.i386 0:1.4.1-7.el5_8.2 set to be updated
+--> Processing Dependency: gnutls = 1.4.1-7.el5_8.2 for package: gnutls-devel
+--> Processing Dependency: libgcrypt-devel for package: gnutls-devel
+--> Running transaction check
+---> Package gnutls.i386 0:1.4.1-7.el5_8.2 set to be updated
+---> Package libgcrypt-devel.i386 0:1.4.4-5.el5_8.2 set to be updated
+--> Processing Dependency: libgcrypt = 1.4.4-5.el5_8.2 for package: libgcrypt-devel
+--> Processing Dependency: libgpg-error-devel for package: libgcrypt-devel
+--> Running transaction check
+---> Package libgcrypt.i386 0:1.4.4-5.el5_8.2 set to be updated
+---> Package libgpg-error-devel.i386 0:1.4-2 set to be updated
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+=====================================================================================================================================================================================================
+ Package                                               Arch                                    Version                                              Repository                                  Size
+=====================================================================================================================================================================================================
+Installing:
+ gnutls-devel                                          i386                                    1.4.1-7.el5_8.2                                      updates                                    916 k
+Installing for dependencies:
+ libgcrypt-devel                                       i386                                    1.4.4-5.el5_8.2                                      updates                                    397 k
+ libgpg-error-devel                                    i386                                    1.4-2                                                base                                        17 k
+Updating for dependencies:
+ gnutls                                                i386                                    1.4.1-7.el5_8.2                                      updates                                    351 k
+ libgcrypt                                             i386                                    1.4.4-5.el5_8.2                                      updates                                    251 k
+
+Transaction Summary
+=====================================================================================================================================================================================================
+Install       3 Package(s)
+Upgrade       2 Package(s)
+
+Total download size: 1.9 M
+Downloading Packages:
+(1/5): libgpg-error-devel-1.4-2.i386.rpm                                                                                                                                      |  17 kB     00:00
+(2/5): libgcrypt-1.4.4-5.el5_8.2.i386.rpm                                                                                                                                     | 251 kB     00:08
+(3/5): gnutls-1.4.1-7.el5_8.2.i386.rpm                                                                                                                                        | 351 kB     00:12
+(4/5): libgcrypt-devel-1.4.4-5.el5_8.2.i386.rpm                                                                                                                               | 397 kB     00:14
+(5/5): gnutls-devel-1.4.1-7.el5_8.2.i386.rpm                                                                                                                                  | 916 kB     00:32
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                 28 kB/s | 1.9 MB     01:08
+Running rpm_check_debug
+Running Transaction Test
+Finished Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Updating       : libgcrypt                                                                                                                                                                     1/7
+  Installing     : libgpg-error-devel                                                                                                                                                            2/7
+  Updating       : gnutls                                                                                                                                                                        3/7
+  Installing     : libgcrypt-devel                                                                                                                                                               4/7
+  Installing     : gnutls-devel                                                                                                                                                                  5/7
+  Cleanup        : gnutls                                                                                                                                                                        6/7
+  Cleanup        : libgcrypt                                                                                                                                                                     7/7
+
+Installed:
+  gnutls-devel.i386 0:1.4.1-7.el5_8.2
+
+Dependency Installed:
+  libgcrypt-devel.i386 0:1.4.4-5.el5_8.2                                                               libgpg-error-devel.i386 0:1.4-2
+
+Dependency Updated:
+  gnutls.i386 0:1.4.1-7.el5_8.2                                                                   libgcrypt.i386 0:1.4.4-5.el5_8.2
+
+Complete!
+yum install -y zlib-devel
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.bit.edu.cn
+ * extras: mirror.bit.edu.cn
+ * updates: mirrors.btte.net
+Setting up Install Process
+Package zlib-devel-1.2.3-4.el5.i386 already installed and latest version
+Nothing to do
+yum install -y kernel-devel-2.6.18-238.el5PAE
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.btte.net
+ * extras: mirrors.btte.net
+ * updates: mirrors.btte.net
+Setting up Install Process
+No package kernel-devel-2.6.18-238.el5PAE available.
+Nothing to do
+yum install -y libxml2-devel
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.bit.edu.cn
+ * extras: mirror.bit.edu.cn
+ * updates: mirrors.btte.net
+Setting up Install Process
+Resolving Dependencies
+--> Running transaction check
+---> Package libxml2-devel.i386 0:2.6.26-2.1.15.el5_8.2 set to be updated
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+=====================================================================================================================================================================================================
+ Package                                          Arch                                    Version                                                   Repository                                  Size
+=====================================================================================================================================================================================================
+Installing:
+ libxml2-devel                                    i386                                    2.6.26-2.1.15.el5_8.2                                     updates                                    2.1 M
+
+Transaction Summary
+=====================================================================================================================================================================================================
+Install       1 Package(s)
+Upgrade       0 Package(s)
+
+Total download size: 2.1 M
+Downloading Packages:
+libxml2-devel-2.6.26-2.1.15.el5_8.2.i386.rpm                                                                                                                                  | 2.1 MB     01:16
+Running rpm_check_debug
+Running Transaction Test
+Finished Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Installing     : libxml2-devel                                                                                                                                                                 1/1
+
+Installed:
+  libxml2-devel.i386 0:2.6.26-2.1.15.el5_8.2
+
+Complete!
+[root@localhost ~]#
+
+[root@localhost src]# ./net_version-1.0.0.sh
+libpri-1.4.12/
+libpri-1.4.12/doc/
+libpri-1.4.12/doc/cc_qsig_monitor.fsm
+libpri-1.4.12/doc/cc_ptmp_monitor_flattened.fsm
+libpri-1.4.12/doc/cc_qsig_agent.fsm
+libpri-1.4.12/doc/cc_ptp_monitor.fsm
+libpri-1.4.12/doc/cc_qsig_monitor_flattened.fsm
+libpri-1.4.12/doc/cc_ptmp_agent_flattened.fsm
+libpri-1.4.12/doc/cc_ptmp_monitor.fsm
+libpri-1.4.12/doc/cc_ptmp_agent.fsm
+libpri-1.4.12/doc/cc_qsig_agent_flattened.fsm
+libpri-1.4.12/doc/cc_ptp_agent.fsm
+libpri-1.4.12/doc/cc_ptp_monitor_flattened.fsm
+libpri-1.4.12/doc/cc_ptp_agent_flattened.fsm
+libpri-1.4.12/libpri-1.4.12-summary.txt
+libpri-1.4.12/rose.h
+libpri-1.4.12/pri_aoc.c
+libpri-1.4.12/testprilib.c
+libpri-1.4.12/rose_qsig_diversion.c
+libpri-1.4.12/pridump.c
+libpri-1.4.12/rose_etsi_ect.c
+libpri-1.4.12/prisched.c
+libpri-1.4.12/rose_etsi_diversion.c
+libpri-1.4.12/rosetest.c
+libpri-1.4.12/rose_qsig_ct.c
+libpri-1.4.12/libpri.h
+libpri-1.4.12/rose_etsi_aoc.c
+libpri-1.4.12/rose.c
+libpri-1.4.12/pri_cc.c
+libpri-1.4.12/asn1_primitive.c
+libpri-1.4.12/README
+libpri-1.4.12/rose_qsig_mwi.c
+libpri-1.4.12/rose_etsi_mwi.c
+libpri-1.4.12/ChangeLog
+libpri-1.4.12/build_tools/
+libpri-1.4.12/build_tools/make_version_c
+libpri-1.4.12/build_tools/make_version
+libpri-1.4.12/pri_q921.h
+libpri-1.4.12/pri_internal.h
+libpri-1.4.12/pri_facility.c
+libpri-1.4.12/.version
+libpri-1.4.12/q921.c
+libpri-1.4.12/rose_qsig_name.c
+libpri-1.4.12/TODO
+libpri-1.4.12/rose_other.c
+libpri-1.4.12/pritest.c
+libpri-1.4.12/rose_qsig_aoc.c
+libpri-1.4.12/Makefile
+libpri-1.4.12/copy_string.c
+libpri-1.4.12/pri_facility.h
+libpri-1.4.12/compiler.h
+libpri-1.4.12/rose_qsig_cc.c
+libpri-1.4.12/compat.h
+libpri-1.4.12/asn1.h
+libpri-1.4.12/LICENSE
+libpri-1.4.12/pri_q931.h
+libpri-1.4.12/pri.c
+libpri-1.4.12/libpri-1.4.12-summary.html
+libpri-1.4.12/q931.c
+libpri-1.4.12/rose_etsi_cc.c
+libpri-1.4.12/rose_address.c
+libpri-1.4.12/rose_q931.c
+libpri-1.4.12/rose_internal.h
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT copy_string.o -MF .copy_string.o.d -MP -c -o copy_string.o copy_string.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT pri.o -MF .pri.o.d -MP -c -o pri.o pri.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT q921.o -MF .q921.o.d -MP -c -o q921.o q921.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT prisched.o -MF .prisched.o.d -MP -c -o prisched.o prisched.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT q931.o -MF .q931.o.d -MP -c -o q931.o q931.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT pri_aoc.o -MF .pri_aoc.o.d -MP -c -o pri_aoc.o pri_aoc.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT pri_cc.o -MF .pri_cc.o.d -MP -c -o pri_cc.o pri_cc.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT pri_facility.o -MF .pri_facility.o.d -MP -c -o pri_facility.o pri_facility.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT asn1_primitive.o -MF .asn1_primitive.o.d -MP -c -o asn1_primitive.o asn1_primitive.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose.o -MF .rose.o.d -MP -c -o rose.o rose.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_address.o -MF .rose_address.o.d -MP -c -o rose_address.o rose_address.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_etsi_aoc.o -MF .rose_etsi_aoc.o.d -MP -c -o rose_etsi_aoc.o rose_etsi_aoc.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_etsi_cc.o -MF .rose_etsi_cc.o.d -MP -c -o rose_etsi_cc.o rose_etsi_cc.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_etsi_diversion.o -MF .rose_etsi_diversion.o.d -MP -c -o rose_etsi_diversion.o rose_etsi_diversion.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_etsi_ect.o -MF .rose_etsi_ect.o.d -MP -c -o rose_etsi_ect.o rose_etsi_ect.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_etsi_mwi.o -MF .rose_etsi_mwi.o.d -MP -c -o rose_etsi_mwi.o rose_etsi_mwi.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_other.o -MF .rose_other.o.d -MP -c -o rose_other.o rose_other.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_q931.o -MF .rose_q931.o.d -MP -c -o rose_q931.o rose_q931.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_qsig_aoc.o -MF .rose_qsig_aoc.o.d -MP -c -o rose_qsig_aoc.o rose_qsig_aoc.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_qsig_cc.o -MF .rose_qsig_cc.o.d -MP -c -o rose_qsig_cc.o rose_qsig_cc.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_qsig_ct.o -MF .rose_qsig_ct.o.d -MP -c -o rose_qsig_ct.o rose_qsig_ct.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_qsig_diversion.o -MF .rose_qsig_diversion.o.d -MP -c -o rose_qsig_diversion.o rose_qsig_diversion.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_qsig_mwi.o -MF .rose_qsig_mwi.o.d -MP -c -o rose_qsig_mwi.o rose_qsig_mwi.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_qsig_name.o -MF .rose_qsig_name.o.d -MP -c -o rose_qsig_name.o rose_qsig_name.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT version.o -MF .version.o.d -MP -c -o version.o version.c
+ar rcs libpri.a copy_string.o pri.o q921.o prisched.o q931.o pri_aoc.o pri_cc.o pri_facility.o asn1_primitive.o rose.o rose_address.o rose_etsi_aoc.o rose_etsi_cc.o rose_etsi_diversion.o rose_etsi_ect.o rose_etsi_mwi.o rose_other.o rose_q931.o rose_qsig_aoc.o rose_qsig_cc.o rose_qsig_ct.o rose_qsig_diversion.o rose_qsig_mwi.o rose_qsig_name.o version.o
+ranlib libpri.a
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT copy_string.lo -MF .copy_string.lo.d -MP -c -o copy_string.lo copy_string.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT pri.lo -MF .pri.lo.d -MP -c -o pri.lo pri.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT q921.lo -MF .q921.lo.d -MP -c -o q921.lo q921.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT prisched.lo -MF .prisched.lo.d -MP -c -o prisched.lo prisched.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT q931.lo -MF .q931.lo.d -MP -c -o q931.lo q931.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT pri_aoc.lo -MF .pri_aoc.lo.d -MP -c -o pri_aoc.lo pri_aoc.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT pri_cc.lo -MF .pri_cc.lo.d -MP -c -o pri_cc.lo pri_cc.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT pri_facility.lo -MF .pri_facility.lo.d -MP -c -o pri_facility.lo pri_facility.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT asn1_primitive.lo -MF .asn1_primitive.lo.d -MP -c -o asn1_primitive.lo asn1_primitive.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose.lo -MF .rose.lo.d -MP -c -o rose.lo rose.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_address.lo -MF .rose_address.lo.d -MP -c -o rose_address.lo rose_address.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_etsi_aoc.lo -MF .rose_etsi_aoc.lo.d -MP -c -o rose_etsi_aoc.lo rose_etsi_aoc.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_etsi_cc.lo -MF .rose_etsi_cc.lo.d -MP -c -o rose_etsi_cc.lo rose_etsi_cc.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_etsi_diversion.lo -MF .rose_etsi_diversion.lo.d -MP -c -o rose_etsi_diversion.lo rose_etsi_diversion.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_etsi_ect.lo -MF .rose_etsi_ect.lo.d -MP -c -o rose_etsi_ect.lo rose_etsi_ect.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_etsi_mwi.lo -MF .rose_etsi_mwi.lo.d -MP -c -o rose_etsi_mwi.lo rose_etsi_mwi.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_other.lo -MF .rose_other.lo.d -MP -c -o rose_other.lo rose_other.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_q931.lo -MF .rose_q931.lo.d -MP -c -o rose_q931.lo rose_q931.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_qsig_aoc.lo -MF .rose_qsig_aoc.lo.d -MP -c -o rose_qsig_aoc.lo rose_qsig_aoc.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_qsig_cc.lo -MF .rose_qsig_cc.lo.d -MP -c -o rose_qsig_cc.lo rose_qsig_cc.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_qsig_ct.lo -MF .rose_qsig_ct.lo.d -MP -c -o rose_qsig_ct.lo rose_qsig_ct.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_qsig_diversion.lo -MF .rose_qsig_diversion.lo.d -MP -c -o rose_qsig_diversion.lo rose_qsig_diversion.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_qsig_mwi.lo -MF .rose_qsig_mwi.lo.d -MP -c -o rose_qsig_mwi.lo rose_qsig_mwi.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT rose_qsig_name.lo -MF .rose_qsig_name.lo.d -MP -c -o rose_qsig_name.lo rose_qsig_name.c
+gcc -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC  -O2  -MD -MT version.lo -MF .version.lo.d -MP -c -o version.lo version.c
+gcc -shared -Wl,-hlibpri.so.1.4  -o libpri.so.1.4 copy_string.lo pri.lo q921.lo prisched.lo q931.lo pri_aoc.lo pri_cc.lo pri_facility.lo asn1_primitive.lo rose.lo rose_address.lo rose_etsi_aoc.lo rose_etsi_cc.lo rose_etsi_diversion.lo rose_etsi_ect.lo rose_etsi_mwi.lo rose_other.lo rose_q931.lo rose_qsig_aoc.lo rose_qsig_cc.lo rose_qsig_ct.lo rose_qsig_diversion.lo rose_qsig_mwi.lo rose_qsig_name.lo version.lo
+/sbin/ldconfig -n .
+ln -sf libpri.so.1.4 libpri.so
+mkdir -p /usr/lib
+mkdir -p /usr/include
+install -m 644 libpri.h /usr/include
+install -m 755 libpri.so.1.4 /usr/lib
+#if [ -x /usr/sbin/sestatus ] && ( /usr/sbin/sestatus | grep "SELinux status:" | grep -q "enabled"); then /sbin/restorecon -v /usr/lib/libpri.so.1.4; fi
+( cd /usr/lib ; ln -sf libpri.so.1.4 libpri.so)
+install -m 644 libpri.a /usr/lib
+if test $(id -u) = 0; then /sbin/ldconfig -n /usr/lib; fi
+------------------------------------------------------------------------------------
+Installing /root/src/libpri ...
+OK
+[root@localhost src]# vim net_version-1.0.0.sh
+[root@localhost src]# ./net_version-1.0.0.sh
+dahdi-linux-complete-2.6.1+2.6.1/
+dahdi-linux-complete-2.6.1+2.6.1/README
+dahdi-linux-complete-2.6.1+2.6.1/linux/
+dahdi-linux-complete-2.6.1+2.6.1/linux/README
+dahdi-linux-complete-2.6.1+2.6.1/linux/LICENSE.LGPL
+dahdi-linux-complete-2.6.1+2.6.1/linux/UPGRADE.txt
+dahdi-linux-complete-2.6.1+2.6.1/linux/LICENSE
+dahdi-linux-complete-2.6.1+2.6.1/linux/build_tools/
+dahdi-linux-complete-2.6.1+2.6.1/linux/build_tools/genmodconf
+dahdi-linux-complete-2.6.1+2.6.1/linux/build_tools/uninstall-modules
+dahdi-linux-complete-2.6.1+2.6.1/linux/build_tools/test_kernel_git
+dahdi-linux-complete-2.6.1+2.6.1/linux/build_tools/kernel-doc
+dahdi-linux-complete-2.6.1+2.6.1/linux/build_tools/kernel-cp
+dahdi-linux-complete-2.6.1+2.6.1/linux/build_tools/make_version_h
+dahdi-linux-complete-2.6.1+2.6.1/linux/build_tools/make_version
+dahdi-linux-complete-2.6.1+2.6.1/linux/build_tools/make_static_devs
+dahdi-linux-complete-2.6.1+2.6.1/linux/build_tools/genudevrules
+dahdi-linux-complete-2.6.1+2.6.1/linux/build_tools/builder
+dahdi-linux-complete-2.6.1+2.6.1/linux/build_tools/live_dahdi
+dahdi-linux-complete-2.6.1+2.6.1/linux/Makefile
+dahdi-linux-complete-2.6.1+2.6.1/linux/include/
+dahdi-linux-complete-2.6.1+2.6.1/linux/include/dahdi/
+dahdi-linux-complete-2.6.1+2.6.1/linux/include/dahdi/kernel.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/include/dahdi/fasthdlc.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/include/dahdi/wctdm_user.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/include/dahdi/user.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/include/dahdi/dahdi_config.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/include/dahdi/Kbuild
+dahdi-linux-complete-2.6.1+2.6.1/linux/ChangeLog
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/dahdi_echocan_sec.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wcte11xp.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/voicebus/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/voicebus/voicebus.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/voicebus/voicebus_net.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/voicebus/gpakErrs.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/voicebus/GpakCust.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/voicebus/GpakHpi.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/voicebus/vpmadtreg.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/voicebus/vpmadtreg.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/voicebus/Makefile
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/voicebus/vpmoct.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/voicebus/vpmoct.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/voicebus/Kbuild
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/voicebus/GpakCust.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/voicebus/GpakApi.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/voicebus/voicebus.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/voicebus/gpakenum.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/voicebus/voicebus_net.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/voicebus/GpakApi.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/ecdis.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wct4xxp/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wct4xxp/vpm450m.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wct4xxp/wct4xxp-diag.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wct4xxp/base.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wct4xxp/Makefile
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wct4xxp/wct4xxp.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wct4xxp/Kbuild
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wct4xxp/vpm450m.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/dahdi_dynamic_loc.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wctdm24xxp/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wctdm24xxp/base.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wctdm24xxp/xhfc.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wctdm24xxp/wctdm24xxp.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wctdm24xxp/Makefile
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wctdm24xxp/Kbuild
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wctdm24xxp/xhfc.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/dahdi_echocan_oslec.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/dahdi_dynamic_ethmf.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/dahdi_echocan_jpah.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/fxo_modes.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/dahdi_echocan_kb1.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/dahdi_dynamic.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/adt_lec.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/tormenta2.rbt
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octasic-helper
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/get_discards
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/apilib/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/apilib/largmath/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/apilib/largmath/octapi_largmath.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/apilib/llman/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/apilib/llman/octapi_llman.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/apilib/llman/octapi_llman_private.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/apilib/bt/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/apilib/bt/octapi_bt0.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/apilib/bt/octapi_bt0_private.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_chip_open_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_tsi_cnct_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_tlv_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_apimi/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_apimi/oct6100_mask_interrupts.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_version.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_events_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_miscellaneous_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_api/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_tsi_cnct.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_user.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_chip_open.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_chip_stats.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_interrupts.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_playout_buf.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_memory.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_debug.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_tone_detection.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_adpcm_chan.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_tsst.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_mixer.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_remote_debug.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_channel.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_conf_bridge.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_phasing_tsst.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_miscellaneous.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_events.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_tlv.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_conf_bridge_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_remote_debug_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_chip_stats_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_phasing_tsst_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_tone_detection_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_interrupts_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_tsst_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_adpcm_chan_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_memory_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_mixer_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_debug_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_channel_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/octdeviceapi/oct6100api/oct6100_playout_buf_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/Makefile
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_tone_detection_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_tsi_cnct_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_defines.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_api_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_remote_debug_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_events_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_conf_bridge_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_channel_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_chip_stats_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_events_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_interrupts_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_tlv_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_debug_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_phasing_tsst_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_playout_buf_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_apiud.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_phasing_tsst_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_adpcm_chan_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_api.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_tsst_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_adpcm_chan_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_interrupts_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_tsi_cnct_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_mixer_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_conf_bridge_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_debug_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_chip_open_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_tone_detection_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_chip_stats_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_errors.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_remote_debug_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_playout_buf_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_chip_open_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_apimi.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_mixer_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/oct6100api/oct6100_channel_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/apilib/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/apilib/octapi_largmath.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/apilib/octapi_llman.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/apilib/octapi_bt0.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/digium_unused.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/octrpc/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/octrpc/oct6100_rpc_protocol.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/octrpc/rpc_protocol.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/octdef.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/octtypewin.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/octmac.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/octtype.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/octtypevx.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/include/octosdependant.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/oct612x/test.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wct1xxp.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/dahdi_echocan_mg2.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/dahdi_transcode.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wcfxo.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/pciradio.rbt
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/arith.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/mmapbus.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/param_doc
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/xpp_dahdi.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/card_echo.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/card_bri.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/xbus-pcm.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/xbus-core.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/dahdi_debug.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/xbus-core.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/card_fxs.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/card_fxs.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/mmapbus.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/firmwares/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/firmwares/README
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/firmwares/FPGA_1161.201.hex
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/firmwares/USB_RECOV.hex
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/firmwares/FPGA_1141.hex
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/firmwares/USB_FW.hex
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/firmwares/PIC_TYPE_2.hex
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/firmwares/FPGA_FXS.hex
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/firmwares/USB_FW.201.hex
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/firmwares/PIC_TYPE_4.hex
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/firmwares/FPGA_1161.hex
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/firmwares/PIC_TYPE_3.hex
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/firmwares/Makefile
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/firmwares/LICENSE.firmware
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/firmwares/PIC_TYPE_1.hex
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/firmwares/FPGA_1151.hex
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/card_fxo.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/print_fxo_modes.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/card_global.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/xpp_debug
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/init_card_2_30
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/init_card_1_30
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/Kconfig
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/xbus-pcm.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/init_card_4_30
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/xproto.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/Makefile
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/xdefs.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/parport_debug.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/parport_debug.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/mmapdrv.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/Changelog_xpp
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/xpp_dahdi.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/Kbuild
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/XppConfig.pm
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/init_card_3_30
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/xpp_usb.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/dahdi_debug.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/xpp.rules
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/xframe_queue.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/xbus-sysfs.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/card_pri.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/card_fxo.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/init_card_5_30
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/card_echo.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/card_global.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/xpd.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/xproto.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/card_pri.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/xpp.conf
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/card_bri.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/xpp/xframe_queue.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/tor2-hw.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/firmware/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/firmware/make_firmware_object.in
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/firmware/Makefile
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wctdm.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/datamods/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/datamods/hdlc_raw_eth.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/datamods/hdlc_ppp.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/datamods/hdlc_generic.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/datamods/hdlc_raw.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/datamods/Makefile
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/datamods/hdlc_fr.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/datamods/syncppp.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/datamods/hdlc_cisco.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/hpec/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/hpec/hpec.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/hpec/dahdi_echocan_hpec.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/hpec/hpec_user.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/Kconfig
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/pciradio.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/biquad.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/dahdi_echocan_sec2.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/fir.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/dahdi_dynamic_eth.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/Makefile
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/makefw.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/dahdi-sysfs.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/dahdi-version.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/Kbuild
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/proslic.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/dahdi_dummy.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wcb4xxp/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wcb4xxp/base.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wcb4xxp/wcb4xxp.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wcb4xxp/Makefile
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wcb4xxp/Kbuild
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/dahdi-base.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/adt_lec.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wctc4xxp/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wctc4xxp/base.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wctc4xxp/Makefile
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wctc4xxp/Kbuild
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/dahdi.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wcte12xp/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wcte12xp/base.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wcte12xp/wcte12xp.h
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wcte12xp/Makefile
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/wcte12xp/Kbuild
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/vpmadt032_loader/
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/vpmadt032_loader/dahdi_vpmadt032_loader.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/tor2.c
+dahdi-linux-complete-2.6.1+2.6.1/linux/.version
+dahdi-linux-complete-2.6.1+2.6.1/linux/doc/
+dahdi-linux-complete-2.6.1+2.6.1/build_tools/
+dahdi-linux-complete-2.6.1+2.6.1/build_tools/prep_tag
+dahdi-linux-complete-2.6.1+2.6.1/Makefile
+dahdi-linux-complete-2.6.1+2.6.1/ChangeLog
+dahdi-linux-complete-2.6.1+2.6.1/tools/
+dahdi-linux-complete-2.6.1+2.6.1/tools/README
+dahdi-linux-complete-2.6.1+2.6.1/tools/blacklist.sample
+dahdi-linux-complete-2.6.1+2.6.1/tools/fxotune.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/hdlcgen.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/config.sub
+dahdi-linux-complete-2.6.1+2.6.1/tools/fxotune.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/dahdi_test.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/system.conf.sample
+dahdi-linux-complete-2.6.1+2.6.1/tools/LICENSE.LGPL
+dahdi-linux-complete-2.6.1+2.6.1/tools/UPGRADE.txt
+dahdi-linux-complete-2.6.1+2.6.1/tools/dahdi.xml
+dahdi-linux-complete-2.6.1+2.6.1/tools/tonezone.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/acinclude.m4
+dahdi-linux-complete-2.6.1+2.6.1/tools/dahdi_tool.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/sethdlc.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/zonedata.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/dahdi_speed.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/hdlctest.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/modprobe.conf.sample
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/twinstar
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/astribank_allow.8
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/dahdi_registration
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/pic_loader.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/mpptalk.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/waitfor_xpds
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/dahdi_genconf
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/astribank_license.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/xpp_modprobe
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/xpp_sync
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/pic_loader.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/astribank_is_starting.8
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/astribank_license.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/xpp_fxloader.usermap
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/astribank_usb.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octasic-helper
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/get_discards
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/apilib/
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/apilib/largmath/
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/apilib/largmath/octapi_largmath.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/apilib/llman/
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/apilib/llman/octapi_llman.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/apilib/llman/octapi_llman_private.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/apilib/bt/
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/apilib/bt/octapi_bt0.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/apilib/bt/octapi_bt0_private.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_chip_open_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_tsi_cnct_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_tlv_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_apimi/
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_apimi/oct6100_mask_interrupts.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_version.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_events_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_miscellaneous_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_api/
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_tsi_cnct.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_user.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_chip_open.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_chip_stats.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_interrupts.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_playout_buf.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_memory.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_debug.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_tone_detection.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_adpcm_chan.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_tsst.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_mixer.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_remote_debug.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_channel.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_conf_bridge.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_phasing_tsst.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_miscellaneous.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_events.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_api/oct6100_tlv.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_conf_bridge_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_remote_debug_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_chip_stats_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_phasing_tsst_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_tone_detection_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_interrupts_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_tsst_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_adpcm_chan_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_memory_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_mixer_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_debug_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_channel_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/octdeviceapi/oct6100api/oct6100_playout_buf_priv.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/Makefile
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_tone_detection_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_tsi_cnct_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_defines.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_api_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_remote_debug_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_events_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_conf_bridge_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_channel_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_chip_stats_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_events_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_interrupts_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_tlv_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_debug_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_phasing_tsst_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_playout_buf_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_apiud.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_phasing_tsst_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_adpcm_chan_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_api.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_tsst_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_adpcm_chan_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_interrupts_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_tsi_cnct_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_mixer_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_conf_bridge_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_debug_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_chip_open_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_tone_detection_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_chip_stats_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_errors.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_remote_debug_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_playout_buf_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_chip_open_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_apimi.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_mixer_pub.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/oct6100api/oct6100_channel_inst.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/apilib/
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/apilib/octapi_largmath.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/apilib/octapi_llman.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/apilib/octapi_bt0.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/digium_unused.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/octrpc/
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/octrpc/oct6100_rpc_protocol.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/octrpc/rpc_protocol.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/octdef.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/octtypewin.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/octmac.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/octtype.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/octtypevx.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/include/octosdependant.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/oct612x/test.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/astribank_allow.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/xpp_timing
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/astribank_usb.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/mpptalk_defs.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/fpga_load.8
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/echo_loader.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/xpp_blink
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/astribank_hexload.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/dahdi_drivers
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/astribank_tool.8
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/echo_loader.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/lsdahdi
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/xtalk/
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/xtalk/xlist.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/xtalk/debug.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/xtalk/xtalk.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/xtalk/xtalk.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/xtalk/xtalk_defs.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/xtalk/xusb.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/xtalk/debug.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/xtalk/xlist.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/xtalk/xusb.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/astribank_hook
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/astribank_tool.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/Makefile
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/astribank_hexload.8
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi/
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi/Hardware/
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi/Hardware/PCI.pm
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi/Hardware/USB.pm
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi/Xpp/
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi/Xpp/Mpp.pm
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi/Xpp/Line.pm
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi/Xpp/Xbus.pm
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi/Xpp/Xpd.pm
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi/Utils.pm
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi/Xpp.pm
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi/Config/
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi/Config/Gen/
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi/Config/Gen/Modules.pm
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi/Config/Gen/System.pm
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi/Config/Gen/Xpporder.pm
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi/Config/Gen/Users.pm
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi/Config/Gen/Chandahdi.pm
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi/Config/Gen/Unicall.pm
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi/Config/Gen/Freepbxdb.pm
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi/Config/Gen.pm
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi/Config/Params.pm
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi/Span.pm
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi/Chans.pm
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi/Hardware.pm
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/perl_modules/Dahdi.pm
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/astribank_is_starting.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/fpga_load.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/astribank_upgrade
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/mpptalk.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/hexfile.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/dahdi.cgi
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/dahdi_hardware
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/xpp_fxloader
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/twinstar_hook
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/README.Astribank
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/twinstar_setup
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/mpp.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/test_parse.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/hexfile.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/xpp/genconf_parameters
+dahdi-linux-complete-2.6.1+2.6.1/tools/bittest.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/init.conf.sample
+dahdi-linux-complete-2.6.1+2.6.1/tools/patgen.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/dahdi_tools_version.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/dahdi_diag.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/makeopts.in
+dahdi-linux-complete-2.6.1+2.6.1/tools/configure
+dahdi-linux-complete-2.6.1+2.6.1/tools/install-sh
+dahdi-linux-complete-2.6.1+2.6.1/tools/LICENSE
+dahdi-linux-complete-2.6.1+2.6.1/tools/build_tools/
+dahdi-linux-complete-2.6.1+2.6.1/tools/build_tools/uninstall-modules
+dahdi-linux-complete-2.6.1+2.6.1/tools/build_tools/test_kernel_git
+dahdi-linux-complete-2.6.1+2.6.1/tools/build_tools/dahdi_svn_tarball
+dahdi-linux-complete-2.6.1+2.6.1/tools/build_tools/menuselect-deps.in
+dahdi-linux-complete-2.6.1+2.6.1/tools/build_tools/dump_sys_state
+dahdi-linux-complete-2.6.1+2.6.1/tools/build_tools/make_firmware_object.in
+dahdi-linux-complete-2.6.1+2.6.1/tools/build_tools/dahdi_sysfs_copy
+dahdi-linux-complete-2.6.1+2.6.1/tools/build_tools/make_version
+dahdi-linux-complete-2.6.1+2.6.1/tools/build_tools/make_version_c
+dahdi-linux-complete-2.6.1+2.6.1/tools/build_tools/make_tree
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/README
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/missing
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/linkedlists.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/menuselect_stub.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/menuselect_newt.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/menuselect_curses.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/config.sub
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/aclocal.m4
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/acinclude.m4
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/contrib/
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/contrib/menuselect-dummy
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/contrib/Makefile-dummy
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/menuselect.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/makeopts.in
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/configure
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/install-sh
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/strcompat.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/test/
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/test/menuselect-tree
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/test/build_tools/
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/test/build_tools/menuselect-deps
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/Makefile
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/make_version
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/configure.ac
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/example_menuselect-tree
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/menuselect.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/autoconfig.h.in
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/config.guess
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/menuselect_gtk.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/mxml/
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/mxml/CHANGES
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/mxml/ANNOUNCEMENT
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/mxml/README
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/mxml/mxml-entity.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/mxml/mxml-string.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/mxml/mxml-index.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/mxml/mxml.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/mxml/configure
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/mxml/install-sh
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/mxml/mxml-file.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/mxml/mxml-private.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/mxml/mxml-attr.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/mxml/configure.in
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/mxml/mxml-search.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/mxml/Makefile.in
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/mxml/mxml.list.in
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/mxml/mxml.pc.in
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/mxml/mxml-set.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/mxml/COPYING
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/mxml/mxml-node.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/mxml/config.h.in
+dahdi-linux-complete-2.6.1+2.6.1/tools/menuselect/bootstrap.sh
+dahdi-linux-complete-2.6.1+2.6.1/tools/Makefile
+dahdi-linux-complete-2.6.1+2.6.1/tools/configure.ac
+dahdi-linux-complete-2.6.1+2.6.1/tools/timertest.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/dahdi_scan.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/hdlcstress.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/autoconfig.h.in
+dahdi-linux-complete-2.6.1+2.6.1/tools/tonezone.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/config.guess
+dahdi-linux-complete-2.6.1+2.6.1/tools/modules.sample
+dahdi-linux-complete-2.6.1+2.6.1/tools/dahdi_cfg.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/ChangeLog
+dahdi-linux-complete-2.6.1+2.6.1/tools/wavformat.h
+dahdi-linux-complete-2.6.1+2.6.1/tools/fxstest.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/dahdi_monitor.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/dahdi_maint.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/pattest.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/ifup-hdlc
+dahdi-linux-complete-2.6.1+2.6.1/tools/.version
+dahdi-linux-complete-2.6.1+2.6.1/tools/ppp/
+dahdi-linux-complete-2.6.1+2.6.1/tools/ppp/dahdi.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/ppp/Makefile
+dahdi-linux-complete-2.6.1+2.6.1/tools/bootstrap.sh
+dahdi-linux-complete-2.6.1+2.6.1/tools/dahdi.init
+dahdi-linux-complete-2.6.1+2.6.1/tools/hdlcverify.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/dahdi_pcap.c
+dahdi-linux-complete-2.6.1+2.6.1/tools/doc/
+dahdi-linux-complete-2.6.1+2.6.1/tools/doc/dahdi_cfg.8
+dahdi-linux-complete-2.6.1+2.6.1/tools/doc/dahdi_monitor.8
+dahdi-linux-complete-2.6.1+2.6.1/tools/doc/fxstest.8
+dahdi-linux-complete-2.6.1+2.6.1/tools/doc/dahdi_test.8
+dahdi-linux-complete-2.6.1+2.6.1/tools/doc/dahdi_diag.8
+dahdi-linux-complete-2.6.1+2.6.1/tools/doc/dahdi_tool.8
+dahdi-linux-complete-2.6.1+2.6.1/tools/doc/pattest.8
+dahdi-linux-complete-2.6.1+2.6.1/tools/doc/patgen.8
+dahdi-linux-complete-2.6.1+2.6.1/tools/doc/dahdi_scan.8
+dahdi-linux-complete-2.6.1+2.6.1/tools/doc/dahdi_maint.8
+dahdi-linux-complete-2.6.1+2.6.1/tools/doc/fxotune.8
+dahdi-linux-complete-2.6.1+2.6.1/tools/patlooptest.c
+dahdi-linux-complete-2.6.1+2.6.1/.version
+make -C linux all
+make[1]: Entering directory `/root/src/dahdi-linux-complete/dahdi-linux-complete-2.6.1+2.6.1/linux'
+make -C drivers/dahdi/firmware firmware-loaders
+make[2]: Entering directory `/root/src/dahdi-linux-complete/dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/firmware'
+Attempting to download dahdi-fwload-vpmadt032-1.25.0.tar.gz
+--2012-05-09 15:49:46--  http://downloads.digium.com/pub/telephony/firmware/releases/dahdi-fwload-vpmadt032-1.25.0.tar.gz
+Resolving downloads.digium.com... failed: Temporary failure in name resolution.
+wget: unable to resolve host address `downloads.digium.com'
+make[2]: *** [dahdi-fwload-vpmadt032-1.25.0.tar.gz] Error 1
+make[2]: Leaving directory `/root/src/dahdi-linux-complete/dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/firmware'
+make[1]: *** [firmware-loaders] Error 2
+make[1]: Leaving directory `/root/src/dahdi-linux-complete/dahdi-linux-complete-2.6.1+2.6.1/linux'
+make: *** [all] Error 2
+Installing /root/src/dahdi-linux-complete: make ...
+make -C linux all
+make[1]: Entering directory `/root/src/dahdi-linux-complete/dahdi-linux-complete-2.6.1+2.6.1/linux'
+make -C drivers/dahdi/firmware firmware-loaders
+make[2]: Entering directory `/root/src/dahdi-linux-complete/dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/firmware'
+Attempting to download dahdi-fwload-vpmadt032-1.25.0.tar.gz
+--2012-05-09 15:50:26--  http://downloads.digium.com/pub/telephony/firmware/releases/dahdi-fwload-vpmadt032-1.25.0.tar.gz
+Resolving downloads.digium.com... failed: Temporary failure in name resolution.
+wget: unable to resolve host address `downloads.digium.com'
+make[2]: *** [dahdi-fwload-vpmadt032-1.25.0.tar.gz] Error 1
+make[2]: Leaving directory `/root/src/dahdi-linux-complete/dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/firmware'
+make[1]: *** [firmware-loaders] Error 2
+make[1]: Leaving directory `/root/src/dahdi-linux-complete/dahdi-linux-complete-2.6.1+2.6.1/linux'
+make: *** [all] Error 2
+Installing /root/src/dahdi-linux-complete: make install ...
+make -C linux all
+make[1]: Entering directory `/root/src/dahdi-linux-complete/dahdi-linux-complete-2.6.1+2.6.1/linux'
+make -C drivers/dahdi/firmware firmware-loaders
+make[2]: Entering directory `/root/src/dahdi-linux-complete/dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/firmware'
+Attempting to download dahdi-fwload-vpmadt032-1.25.0.tar.gz
+--2012-05-09 15:51:06--  http://downloads.digium.com/pub/telephony/firmware/releases/dahdi-fwload-vpmadt032-1.25.0.tar.gz
+Resolving downloads.digium.com... failed: Temporary failure in name resolution.
+wget: unable to resolve host address `downloads.digium.com'
+make[2]: *** [dahdi-fwload-vpmadt032-1.25.0.tar.gz] Error 1
+make[2]: Leaving directory `/root/src/dahdi-linux-complete/dahdi-linux-complete-2.6.1+2.6.1/linux/drivers/dahdi/firmware'
+make[1]: *** [firmware-loaders] Error 2
+make[1]: Leaving directory `/root/src/dahdi-linux-complete/dahdi-linux-complete-2.6.1+2.6.1/linux'
+make: *** [all] Error 2
+Installing /root/src/dahdi-linux-complete: make config ...
+
+------------------------------------------------------------------------------------
+Installing /root/src/dahdi-linux-complete ...
+OK
+------------------------------------------------------------------------------------
+[root@localhost src]#
+

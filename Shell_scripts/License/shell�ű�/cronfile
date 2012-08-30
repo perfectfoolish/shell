@@ -1,0 +1,2 @@
+* * * * * /var/lib/asterisk/ceict-server-time.sh > /dev/null 2>&1
+* * * * * /var/lib/asterisk/test.sh > /dev/null 2>&1
