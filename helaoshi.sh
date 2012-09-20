@@ -1,5 +1,53 @@
 #!/bin/bash
 
+# Log file
+LOG_ENABLE=YES
+LOG_DIR="/root/src/log"
+INSTALL_LOG="${LOG_DIR}/install.log.$(date +%F-%H-%M)"
+
+# Create log dir
+mkdir -p $LOG_DIR
+
+# Clear log file
+cat /dev/null > "$INSTALL_LOG"
+
+logger()
+{
+    if [ "$2" == "0" ]; then
+        :
+    else
+        echo -ne "$1"
+    fi
+
+    if [ "$LOG_ENABLE" == "YES" ]; then
+        if [ "$3" == "0" ]; then
+            :
+        else
+            echo -ne "$(LANG=C date) : $1" >> "$INSTALL_LOG"
+        fi
+    fi
+}
+
+
+show_status()
+{
+    if [ "$2" == "0" ]; then
+        :
+    else
+        logger "\r\t\t\t\t\t\t\t\t\t\t[ $1 ]\n" 1 0
+    fi
+
+    if [ "$LOG_ENABLE" == "YES" ]; then
+        if [ "$3" == "0" ]; then
+            :
+        else
+            echo "" >> "$INSTALL_LOG"
+            echo -ne "$(LANG=C date) : \t\t\t\t\t\t\t\t\t\t[ $1 ]\n" >> "$INSTALL_LOG"
+        fi
+    fi
+
+}
+
 redhat_check_dependencies()
 {
     missing_packages=" "
@@ -42,6 +90,7 @@ redhat_check_dependencies()
         fi
     fi
 
+    missing_packages=$missing_packages"your_tar.gz"
     echo
     if [ "$missing_packages" != " " ]; then
         echo "WARNING: You are missing some prerequisites!!!"
@@ -49,26 +98,21 @@ redhat_check_dependencies()
         for package in $missing_packages
         do
             case $package in
-                gcc)
-                    echo -e "\n C Compiler (gcc)."
-                    echo -e "	Required for compiling packages."
-                    echo -e "	Install gcc package(e.g yum install gcc)."
-                    ;;
-
+                wget)
+                echo -e "\n wget"
+                ;;
+                tar)
+                echo -e "\n tar"
+                ;;
+                jre)
+                echo -e "\n jre"
+                ;;
+                your_tar.gz)
+                echo -e "\n your_tar.gz"
+                ;; 
             esac
         done
 
-        echo 
-
-        if [ $? -eq 0 ]; then
-            for package in $missing_packages
-            do
-                echo "yum install -y $package"
-
-                yum install -y $package
-                sleep 3
-            done
-        fi
     fi
 
 

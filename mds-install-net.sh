@@ -660,21 +660,29 @@ deploy_vsftpd()
         logger "ERROR: start vsftpd failed !!\n"
         exit 1
     fi
-    /usr/sbin/adduser -d /opt/pic_ftp -g ftp -s /sbin/nologin pic    
+
+    finger pic | grep Login
     if [ $? -eq 0 ]; then
         show_status OK 0 1
+        logger "PIC: pic already exist"
+        echo "PIC: pic already exist"
     else
-        show_status FAILED 0 1
-        logger "ERROR: set up pic failed !!\n"
-        exit 1
-    fi
-    echo "2011ceict" | passwd --stdin pic
-    if [ $? -eq 0 ]; then
-        show_status OK 0 1
-    else
-        show_status FAILED 0 1
-        logger "ERROR: passww pic failed !!\n"
-        exit 1
+        /usr/sbin/adduser -d /opt/pic_ftp -g ftp -s /sbin/nologin pic    
+        if [ $? -eq 0 ]; then
+            show_status OK 0 1
+        else
+            show_status FAILED 0 1
+            logger "ERROR: set up pic failed !!\n"
+            exit 1
+        fi
+        echo "2011ceict" | passwd --stdin pic
+        if [ $? -eq 0 ]; then
+            show_status OK 0 1
+        else
+            show_status FAILED 0 1
+            logger "ERROR: passwd pic failed !!\n"
+            exit 1
+        fi
     fi
 }
 
