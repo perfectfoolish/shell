@@ -521,3 +521,4 @@ check_succeed_fail
 
 logger "NOTE: You MUST reboot your system NOW! then install seccessfully !\n" 1 0
 #--------------End---------------------------------------
+echo -e "\033[30;32m green color \033[0m"
