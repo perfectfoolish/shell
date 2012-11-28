@@ -469,8 +469,6 @@ else
    :
 fi
 
-
-
 #if [ $? -ne 0 ]; then
 #    show_status FAILED 0 1
 #    logger "ERROR: Uninstall java failed.\n" 1 0
