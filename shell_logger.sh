@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## created by gembler.
-#http://gembler.iteye.com/blog/319525
+##http://gembler.iteye.com/blog/319525
 ##--------------------##
 ## initialize logger. ##
 ##--------------------##
