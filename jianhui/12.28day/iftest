@@ -1,9 +1,0 @@
-#!/bin/bash
-
-filename="a.txt"
-if [ -e $filename ]
-then
-   echo "a.txt文件存在"
-else
-   echo "a.txt文件不存在"
-fi

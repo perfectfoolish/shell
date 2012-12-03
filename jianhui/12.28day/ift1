@@ -1,9 +1,0 @@
-#!/bin/bash
-
-DIR=`pwd`
-if [ $DIR = $HOME ]
-then 
-   echo "当前不是家目录"
-else
-   echo "当前是家目录"
-fi 
