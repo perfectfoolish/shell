@@ -1,9 +1,12 @@
 #!/bin/bash
-#
-#
-#
-#
-#
+# Program:
+#   change the string in the name of dirs and 
+# the files.
+# NOTES:
+# This program is free software, no any warrant.
+# Author of this script will not accept any responsibilies
+# if it brings hazards to you. 
+# © Copyright 2012 Me. All Rights Reserved.
 
 #-----------------------------------------------
 # For debugging
@@ -66,19 +69,19 @@ check_bash()
 }
 
 #-----------------------------------------------
-# Usage
+# Change the name of dirs and files
 #-----------------------------------------------
 change_filename()
 {
-    cd $1
+    cd "$1"
     for old in `find ./ -iname "*$2*"`; do
-        if [[ -f $old ]]; then
+        if [[ -f "$old" ]]; then
             new="${old//$2/$3}"
-            mv $old $new
-        elif [[ -d $old ]]; then
+            mv "$old" "$new"
+        elif [[ -d "$old" ]]; then
             new="${old//$2/$3}"
-            mv $old $new
-            change_filename $new $2 $3
+            mv "$old" "$new"
+            change_filename "$new" "$2" "$3"
         fi
     done
 
@@ -88,13 +91,13 @@ change_filename()
 }
 
 #-----------------------------------------------
-# Usage
+# Change the content fo files
 #-----------------------------------------------
 change_filecontent()
 {
-    cd $1
+    cd "$1"
     for filename in `find ./ -type f -exec grep -il "$2" {} \;`; do
-        sed -i "s/$2/$3/g" $filename
+        sed -i "s/$2/$3/g" "$filename"
     done
 
     return 0
