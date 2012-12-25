@@ -74,3 +74,5 @@ echo $RELEASE
 
 mv RPMS/i386/*.rpm RPMS/i386/CMT-$BUILD-$RELEASE.rpm
 mv SOURCES/*.tar.gz SOURCES/CMT-$BUILD-$RELEASE.tar.gz
+
+/var/lib/jenkins/tools/Maven/maven/bin/mvn deploy:deploy-file -X -Durl=http://192.168.0.20:8081/nexus/content/repositories/releases/ -DrepositoryId=ceict -DgroupId=com.ceict -DartifactId=CMT -Dpackaging=rpm -Dfile=/var/lib/jenkins/jobs/CMT_build/workspace/RPMS/i386//CMT-$BUILD-$RELEASE.i386.rpm -Dversion=$BUILD-$RELEASE
