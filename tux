@@ -1,0 +1,130 @@
+#! /bin/sh
+#
+# tux        This starts and stops the TUX kernel-based http server.
+#
+# chkconfig: - 50 50
+# description: The TUX threaded kernel-based http server
+#
+# processname: /usr/sbin/tux
+# config: /etc/sysconfig/tux
+# config: /etc/sysctl.tux
+
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+# Set defaults
+NRCPUS=$(cat /proc/cpuinfo | grep '^processor[	 0-9]*:' | wc -l)
+TUXTHREADS=$NRCPUS
+EXTRAOPTS=
+
+# Get config.
+. /etc/sysconfig/network
+. /etc/sysconfig/tux
+
+# Check that networking is up.
+if [ "${NETWORKING}" = "no" ]
+then
+	exit 0
+fi
+
+# DOCROOT should have precisely one trailing /
+
+[ -z "$DOCROOT" ] && {
+	echo "Must specify a docroot in /etc/sysconfig/tux" 1>&2
+	exit 1
+}
+DOCROOT=$(echo $DOCROOT | sed 's:/*$:/:g')
+
+[ -n "$MODULEPATH" ] && {
+	EXTRAOPTS="$EXTRAOPTS -m $MODULEPATH"
+}
+
+isname(){
+	[ -n "$(echo $1 | tr -d '0-9')" ]
+	return $?
+}
+
+[ -z "$DAEMON_UID" ] && DAEMON_UID=nobody
+[ -z "$DAEMON_GID" ] && DAEMON_GID=nobody
+
+EXTRAOPTS="$EXTRAOPTS -u $DAEMON_UID"
+EXTRAOPTS="$EXTRAOPTS -g $DAEMON_GID"
+
+isname $DAEMON_UID && DAEMON_UID=$(id -u $DAEMON_UID)
+isname $DAEMON_GID && DAEMON_GID=$(awk -F: "\$1 == \"$DAEMON_GID\" { print \$3 }" /etc/group)
+
+[ -z "$CGIROOT" ] && CGIROOT=$DOCROOT
+[ -z "$MAX_KEEPALIVE_TIMEOUT" ] && MAX_KEEPALIVE_TIMEOUT=30
+
+[ -f /usr/sbin/tux ] || exit 1
+RETVAL=0
+
+start(){
+    echo -n "Starting tux: "
+    # TUX ships as a module but many installations will build
+    # it into the kernel for maximum performance.  Try to modprobe
+    # but failures are fine.
+    modprobe tux >/dev/null 2>&1
+    echo $TUXTHREADS > /proc/sys/net/tux/threads
+    echo $DOCROOT > /proc/sys/net/tux/documentroot
+    echo $DAEMON_UID > /proc/sys/net/tux/cgi_uid
+    echo $DAEMON_GID > /proc/sys/net/tux/cgi_gid
+    echo $CGIROOT > /proc/sys/net/tux/cgiroot
+    [ -n "$CLIENTPORT" ] && \
+	echo $CLIENTPORT > /proc/sys/net/tux/clientport
+    [ -f /etc/sysctl.tux ] && sysctl -p /etc/sysctl.tux
+    echo $MAX_KEEPALIVE_TIMEOUT > /proc/sys/net/tux/keepalive_timeout
+    if [ -n "$LOGFILE" ] ; then
+	echo 1 > /proc/sys/net/tux/logging
+	echo $LOGFILE > /proc/sys/net/tux/logfile
+    else
+	echo 0 > /proc/sys/net/tux/logging
+    fi
+    daemon /usr/sbin/tux -d -t $TUXTHREADS -r $DOCROOT $EXTRAOPTS $TUXMODULES
+    RETVAL=$?
+    echo
+    touch /var/lock/subsys/tux
+}
+
+stop(){
+    echo -n "Stopping tux: "
+    /usr/sbin/tux --stop
+    RETVAL=$?
+    echo
+    rm -f /var/lock/subsys/tux
+}
+
+restart(){
+    stop
+    start
+}
+
+condrestart(){
+    [ -e /var/lock/subsys/tux ] && restart
+}
+
+
+# See how we were called.
+case "$1" in
+    start)
+	start
+	;;
+    stop)
+	stop
+	;;
+    status)
+	status /usr/sbin/tux
+	;;
+    restart|reload)
+	restart
+	;;
+    condrestart)
+	condrestart
+	;;
+    *)
+	echo "Usage: tux {start|stop|status|restart|condrestart|reload}"
+	RETVAL=1
+esac
+
+exit $RETVAL
